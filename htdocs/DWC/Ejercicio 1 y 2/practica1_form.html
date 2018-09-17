@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Formulario</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Formulario">
+	<meta name="keywords" content="HTML,formulario">
+	<meta name="author" content="Mauro Pérez">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<h1>Formulario de Contacto</h1>
+	</header>
+	<nav>
+		<a href="practica1.html">Portada</a>
+		<a href="practica1_form.html">Formulario</a>
+		<a href="">Pagina 3</a>
+		<a href="">Pagina 4</a>
+	</nav>
+	<br>
+	<main>
+		<form action="verForm.php" method="POST">
+			<label for="nombre">Escribe tu nombre: </label>
+			<input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
+			<br><br>
+			<label for="dni">Escribe el DNI: </label>
+			<input type="text" id="dni" name="dni" placeholder="DNI con letra" required>
+			<br><br>
+			<label for="fec_nac">Indica la fecha de Nacimiento: </label>
+			<input type="date" id="fec_nac" name="fec_nac" required>
+			<br><br>
+			<label for="coment">Añade algun comentario:</label><br>
+			<textarea id="coment" rows="4" cols="50" placeholder="Campo Opcional"></textarea>
+			<br><br>
+			<label>Indica tu género: </label>
+			<br>
+			<input type="radio" name="sexo" value="male"> Male<br>
+  			<input type="radio" name="sexo" value="female"> Female
+			<br><br>
+			<select id="color" required>
+				<option value="" selected disabled>Selecciona un Color</option>
+				<option value="rojo">Rojo</option>
+				<option value="azul">Azul</option>
+				<option value="verde">Verde</option>
+				<option value="amarillo">Amarillo</option>
+			</select>
+			<br><br>
+			<input type="checkbox" id="lopd" name="lopd" required>
+			<label for="lopd">He leído y acepto la política de privacidad de carácter personal de la aplicación.</label>
+			<br><br>
+			<details>
+				<summary>Política de Privacidad</summary>
+				<p>
+					Según la LOPD y disposiciones de desarrollo, informamos que sus datos personales serán tratados por parte de Mauro Pérez con la finalidad de gestionar la relación comercial. Usted puede ejercitar los derechos de acceso, rectificación, cancelación, oposición y demás derechos en los términos establecidos en la normativa vigente dirigiéndose a nosotros.
+				</p>
+			</details>
+			<br><br>
+			<button type="submit">Enviar</button>
+		</form>
+		<br><br>
+	</main>
+	<footer>
+		<small>Diseño Web en Entorno Cliente - Mauro Pérez</small>
+	</footer>
+</body>
+</html>

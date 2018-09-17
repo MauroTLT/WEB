@@ -1,0 +1,14 @@
+Para este ejercicio se han probado 3 navegadores:
+
+-Google Chrome: 
+	No ha dado ningún problema en especial, en ninguna 
+	de las dos páginas.
+
+-Firefox:
+	No ha dado ningún problema en especial, en ninguna 
+	de las dos páginas.
+
+-Microsoft Edge:
+
+	No muestra correctamente la etiqueta <details> en la página
+	del formulario, muestra el contenido directamente.

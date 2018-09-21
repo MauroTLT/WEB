@@ -12,10 +12,8 @@ function pedirNotas() {
 		if (frase == null) {
 			semaforo = true;
 		} else {
-			while (frase.search(",") >= 0 || frase.search(" ") >= 0) {
-				frase = frase.replace(",", ".");
-				frase = frase.replace(" ", "");
-			}
+			frase = frase.replace(/\s/g,"");
+			frase = frase.replace(/,/g,".");
 			if (frase.search("-") != -1) {
 				frase = frase.split("-");
 				notas = notas.concat(frase);
@@ -23,6 +21,10 @@ function pedirNotas() {
 				notas.push(frase);
 			}
 		}
+	}
+	if (notas.length == 0) {
+		console.log("No ha introducido ninguna nota");
+		return;
 	}
 
 	console.log("Datos suministrados por el usuario: " + notas);
@@ -35,7 +37,7 @@ function pedirNotas() {
 
 	console.log("Nota y posición del primer suspenso: Nota: " + notas.find(nota => nota < 5) + " Posición: " + notas.findIndex(nota => nota < 5));
 
-	let total = notas.reduce((total,nota) => total = +total + (+notas));
-	console.log("Nota y posición del primer suspenso: Nota: " + total);
+	let total = notas.reduce((total,nota) => total = Number(total) + Number(nota));
+	console.log("Suma de notas: " + total);
 
 }

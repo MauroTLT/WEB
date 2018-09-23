@@ -17,11 +17,11 @@ class Product {
     }
 
     productImport() {
-    	return this.price * this.units;
+    	return (this.price * this.units);
     }
 
     toString() {
-    	return this.name + "(" + this.cod + "): " + this.price + " €/u => " + this.productImport();
+    	return this.name + "(" + this.cod + "): " + this.price + " €/u (" + this.units + ") => " + this.productImport();
     }
 
     valueOf() {

@@ -9,19 +9,19 @@ class Product {
     }
 
     changeUnit(cantidad) {
-    	if (!((this.units+cantidad) < 0)) {
-    		this.units += cantidad;
-    		return true;
-    	}
-    	return false;
+        if (!((this.units+cantidad) < 0)) {
+            this.units += cantidad;
+            return true;
+        }
+        return false;
     }
 
     productImport() {
-    	return (this.price * this.units);
+        return (this.price * this.units);
     }
 
     toString() {
-    	return this.name + "(" + this.cod + "): " + this.price + " €/u (" + this.units + ") => " + this.productImport();
+        return this.name + "(" + this.cod + "): " + this.price + " €/u (" + this.units + ") => " + this.productImport();
     }
 
     valueOf() {

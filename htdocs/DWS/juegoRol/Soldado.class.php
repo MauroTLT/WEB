@@ -31,6 +31,9 @@ class Soldado extends Unidad{
 		$this->arma = $arma;
 	}
 
+	public function toString(){
+		return "El Soldado llamado ".$this->nombre."<br>";
+	}
 }
 
 ?>

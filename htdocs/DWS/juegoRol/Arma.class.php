@@ -29,4 +29,10 @@ class ArcoLargo extends Arma{
     }
 }
 
+class ManosDesnudas extends Arma{
+    public function inflige_danyo(){
+        return $this->danyo;
+    }
+}
+
 ?>

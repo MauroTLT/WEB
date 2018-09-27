@@ -7,7 +7,7 @@ require_once('Armadura.class.php');
 require_once('Arma.class.php');
 
 ?>
-<form>
+<form method="POST">
     <table border="1">
         <tr>
             <td align="center">
@@ -43,7 +43,7 @@ require_once('Arma.class.php');
             <td align="center">
                 <h1>Oponente 2</h1>
                 <label>Nombre: </label>
-                <input type="text" name="1nombre">
+                <input type="text" name="2nombre">
                 <br><br>
                 <label>Tipo: </label>
                 <select name="2tipo">
@@ -73,7 +73,7 @@ require_once('Arma.class.php');
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <br><button style="transform: scale(2);" type="submit" name="enviar">EMPEZAR</button><br><br>    
+                <br><button style="transform: scale(2);" type="submit" name="enviar">EMPEZAR</button><br><br>
             </td>
         </tr>
     </table>
@@ -81,27 +81,31 @@ require_once('Arma.class.php');
 
 <?php
 if (isset($_POST['enviar'])) {
-    $personajes = array();
+    $personajes = [];
     for ($i=1; $i < 3; $i++) {
         $nombre = $_POST[$i.'nombre'];
         $tipo = $_POST[$i.'tipo'];
         $arma = $_POST[$i.'arma'];
         $armadura = $_POST[$i.'armadura'];
 
-        if ($arma == 1) {
-            $arma = new ArmaduradePlata();
-        } else if ($arma == 2) {
-            $arma = new ArmaduradeBronze();
-        } else if ($arma == 3) {
-            $arma = new ArmaduradeMalla();
+        if ($armadura == 1) {
+            $armadura = new ArmaduradePlata();
+        } else if ($armadura == 2) {
+            $armadura = new ArmaduradeBronze();
+        } else if ($armadura == 3) {
+            $armadura = new ArmaduradeMalla();
+        }  else {
+            $armadura = null;
         }
 
-        if ($armadura == 1) {
-            $armadura = new Espada(25);
-        } else if ($armadura == 2) {
-            $armadura = new Hacha(30);
-        } else if ($armadura == 3) {
-            $armadura = new ArcoLargo(20);
+        if ($arma == 1) {
+            $arma = new Espada(25);
+        } else if ($arma == 2) {
+            $arma = new Hacha(30);
+        } else if ($arma == 3) {
+            $arma = new ArcoLargo(20);
+        } else {
+            $arma = new ManosDesnudas(5);
         }
 
         if ($tipo == 1) {
@@ -110,12 +114,28 @@ if (isset($_POST['enviar'])) {
             $personajes[$i] = new Arquero($nombre, $armadura, $arma);
         }
     }
-    printf($personajes[1]);
-    printf($personajes[2]);
-    /*
-    $u1->ataque($u2);
-    $u1->ataque($u2);
-    $u2->ataque($u1);
-    $u2->ataque($u1);
-    */
+
+    echo $personajes[1]->toString();
+    echo $personajes[2]->toString();
+
+    for ($i=0; $i < 5; $i++) {
+        echo "<br><br><b>PELEA NUMERO ".($i+1)."</b>";
+        if (rand(0,1)) {
+            while ($personajes[1]->getPuntos() > 0 && $personajes[2]->getPuntos() > 0) {
+                $personajes[1]->ataque($personajes[2]);
+                if ($personajes[2]->getPuntos() > 0) {
+                    $personajes[2]->ataque($personajes[1]);
+                }
+            }
+        } else {
+            while ($personajes[1]->getPuntos() > 0 && $personajes[2]->getPuntos() > 0) {
+                $personajes[2]->ataque($personajes[1]);
+                if ($personajes[1]->getPuntos() > 0) {
+                    $personajes[1]->ataque($personajes[2]);
+                }
+            }
+        }
+        $personajes[1]->revivir();
+        $personajes[2]->revivir();
+    }
 }

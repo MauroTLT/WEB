@@ -31,6 +31,10 @@ class Arquero extends Unidad{
 		$this->arma = $arma;
 	}
 
+	public function toString(){
+		return "El Arquero llamado ".$this->nombre."<br>";
+	}
+
 }
 
 ?>

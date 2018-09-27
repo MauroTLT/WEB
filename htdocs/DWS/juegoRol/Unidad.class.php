@@ -2,7 +2,7 @@
 ini_set('display_errors',1);
 abstract class Unidad {
 
-    protected $puntos = 40;
+    protected $puntos = 100;
     protected $nombre;
 
     public function __construct($nombre){
@@ -17,7 +17,6 @@ abstract class Unidad {
 
     public function muere(){
         echo "<p>$this->nombre muere</p>";
-        exit();
     }
 
     public function tomaDanyo($danyo){
@@ -28,8 +27,16 @@ abstract class Unidad {
         }
     }
 
+    public function revivir(){
+        $this->puntos = 100;
+    }
+
     public function getNombre(){
         return $this->nombre;
+    }
+
+    public function getPuntos(){
+        return $this->puntos;
     }
 }
 

@@ -10,7 +10,7 @@ class Product {
 
     changeUnit(cantidad) {
         if (!((this.units+cantidad) < 0)) {
-            this.units += cantidad;
+            this.units += +cantidad;
             return true;
         }
         return false;
@@ -26,5 +26,9 @@ class Product {
 
     valueOf() {
         return this.price;
+    }
+
+    toTR() {
+        return '<tr><td>' + this.cod + '</td><td>' + this.name + '</td><td>' + this.units + '</td><td>' + this.price + ' €/u</td><td>' + this.productImport() + ' €</td></tr>';
     }
 }

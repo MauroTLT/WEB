@@ -13,17 +13,17 @@ require_once('Arma.class.php');
             <td align="center">
                 <h1>Oponente 1</h1>
                 <label>Nombre: </label>
-                <input type="text" name="1nombre">
+                <input type="text" name="1nombre" required>
                 <br><br>
                 <label>Tipo: </label>
-                <select name="1tipo">
+                <select name="1tipo" required>
                     <option selected disabled value="">Selecciona el tipo de Unidad</option>
                     <option value="1">Soldado</option>
                     <option value="2">Arquero</option>
                 </select>
                 <br><br>
                 <label>Arma: </label>
-                <select name="1arma">
+                <select name="1arma" required>
                     <option selected disabled value="">Selecciona el Arma</option>
                     <option value="0">Sin arma</option>
                     <option value="1">Espada</option>
@@ -32,7 +32,7 @@ require_once('Arma.class.php');
                 </select>
                 <br><br>
                 <label>Armadura: </label>
-                <select name="1armadura">
+                <select name="1armadura" required>
                     <option selected disabled value="">Selecciona el Armadura</option>
                     <option value="0">Sin armadura</option>
                     <option value="1">Armadura de Plata</option>
@@ -43,17 +43,17 @@ require_once('Arma.class.php');
             <td align="center">
                 <h1>Oponente 2</h1>
                 <label>Nombre: </label>
-                <input type="text" name="2nombre">
+                <input type="text" name="2nombre" required>
                 <br><br>
                 <label>Tipo: </label>
-                <select name="2tipo">
+                <select name="2tipo" required>
                     <option selected disabled value="">Selecciona el tipo de Unidad</option>
                     <option value="1">Soldado</option>
                     <option value="2">Arquero</option>
                 </select>
                 <br><br>
                 <label>Arma: </label>
-                <select name="2arma">
+                <select name="2arma" required>
                     <option selected disabled value="">Selecciona el Arma</option>
                     <option value="0">Sin arma</option>
                     <option value="1">Espada</option>
@@ -62,7 +62,7 @@ require_once('Arma.class.php');
                 </select>
                 <br><br>
                 <label>Armadura: </label>
-                <select name="2armadura">
+                <select name="2armadura" required>
                     <option selected disabled value="">Selecciona el Armadura</option>
                     <option value="0">Sin armadura</option>
                     <option value="1">Armadura de Plata</option>
@@ -82,6 +82,7 @@ require_once('Arma.class.php');
 <?php
 if (isset($_POST['enviar'])) {
     $personajes = [];
+    $victorias = [];
     for ($i=1; $i < 3; $i++) {
         $nombre = $_POST[$i.'nombre'];
         $tipo = $_POST[$i.'tipo'];
@@ -110,8 +111,10 @@ if (isset($_POST['enviar'])) {
 
         if ($tipo == 1) {
             $personajes[$i] = new Soldado($nombre, $armadura, $arma);
+            $victorias[$i] = 0;
         } else {
             $personajes[$i] = new Arquero($nombre, $armadura, $arma);
+            $victorias[$i] = 0;
         }
     }
 
@@ -135,7 +138,14 @@ if (isset($_POST['enviar'])) {
                 }
             }
         }
+        if ($personajes[1]->getPuntos() > 0) {
+            $victorias[1]++;
+        } else {
+             $victorias[2]++;
+        }
         $personajes[1]->revivir();
         $personajes[2]->revivir();
     }
+    $hola = ($victorias[1] > $victorias[2]) ? '<h1>'.$personajes[1]->getNombre().' ha ganado con: '.$victorias[1].' victorias</h1>' : '<h1>'.$personajes[2]->getNombre().' ha ganado con: '.$victorias[2].' victorias</h1>';
+    printf($hola);
 }

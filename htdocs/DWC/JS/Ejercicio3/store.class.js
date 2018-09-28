@@ -1,7 +1,7 @@
 'use strict'
 
 class Store {
-    constructor(id) {
+    constructor(id, productos) {
         this.id = id;
         this.products = [];
     }
@@ -38,5 +38,13 @@ class Store {
 
     orderByDescrip() {
         return this.products.sort((a,b) => a.name.localeCompare(b.name));
+    }
+
+    orderByCod() {
+        return this.products.sort((a,b) => a.cod - b.cod);
+    }
+
+    toHTML() {
+        return '<tr><th>Código</th><th>Nombre</th><th>Uds.</th><th>Precio/u</th><th>Importe</th></tr>' + almacen.orderByCod().reduce((lista, prod) => lista += prod.toTR(),"");
     }
 }

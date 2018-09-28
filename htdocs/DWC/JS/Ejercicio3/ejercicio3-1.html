@@ -5,14 +5,29 @@
 		<meta charset="utf-8">
 		<meta name="author" content="Mauro Pérez">
 		<meta name="description" content="Ejercicio2.1_DWC">
-		<meta name="keywords" content="practica,dwc,html,javascript">	
+		<meta name="keywords" content="practica,dwc,html,javascript">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	</head>
+		<script src="store.class.js"></script>
+	<script src="cart.class.js"></script>
+	<script src="producto.class.js"></script>
+	<script src="ejercicio3-1.js"></script>
 	<body>
 		<main>
 			<h1>OPEN THE CONSOLE</h1>
+			<table id="almacen" class="table">
+				
+			</table>
+			<div id="aux" class="row">
+				
+			</div>
 		</main>
 	</body>
-	<script src="store.class.js"></script>
-	<script src="producto.class.js"></script>
-	<script src="ejercicio3-1.js"></script>
+	<script>
+		document.getElementById('almacen').innerHTML = almacen.toHTML();
+		for (let i = 0; i < carritos.length; i++) {
+			document.getElementById('aux').innerHTML += carritos[i].toDiv();
+		}	
+	</script>
+
 </html>

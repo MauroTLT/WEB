@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Ejercicio 3.1 - JavaScript</title>
+		<title>Ejercicio 4.1 - JavaScript</title>
 		<meta charset="utf-8">
 		<meta name="author" content="Mauro Pérez">
-		<meta name="description" content="Ejercicio2.1_DWC">
+		<meta name="description" content="Ejercicio4.1_DWC">
 		<meta name="keywords" content="practica,dwc,html,javascript">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<script src="store.class.js"></script>
-		<script src="cart.class.js"></script>
-		<script src="producto.class.js"></script>
-		<script src="ejercicio4-1.js"></script>
 	</head>
 	<body>
 		<main>
 			<h1>OPEN THE CONSOLE</h1>
-			<table id="almacen" class="table"></table>
+			<table id="almacen" class="table table-striped"></table>
 			<div id="carritos" class="row"></div>
-			<script>
-				document.getElementById('almacen').innerHTML = almacen.toHTML();
-				for (let i = 0; i < carritos.length; i++) {
-					document.getElementById('carritos').innerHTML += carritos[i].toDiv();
-				}	
-			</script>
 		</main>
 	</body>
+	<script src="store.class.js"></script>
+	<script src="cart.class.js"></script>
+	<script src="producto.class.js"></script>
+	<script src="ejercicio4-1.js"></script>
 </html>

@@ -21,7 +21,7 @@ class Product {
     }
 
     toString() {
-        return this.name + "(" + this.cod + "): " + this.price + " €/u (" + this.units + ") => " + this.productImport();
+        return this.units + " x " + this.name + "(" + this.price + ") = " + this.productImport() + " €";
     }
 
     valueOf() {
@@ -29,6 +29,6 @@ class Product {
     }
 
     toTR() {
-        return '<tr><td>' + this.cod + '</td><td>' + this.name + '</td><td>' + this.units + '</td><td>' + this.price + ' €/u</td><td>' + this.productImport() + ' €</td></tr>';
+        return /*'<tr id="' + this.cod + '">*/'<td>' + this.cod + '</td><td>' + this.name + '</td><td>' + this.units + '</td><td>' + this.price + ' €/u</td><td>' + this.productImport().toFixed(2) + ' €</td>'/*</tr>'*/;
     }
 }

@@ -77,3 +77,7 @@ function removeFromCart(carro, cod, units) {
 		console.log("Codigo no encontrado en CARRITO");
 	}
 }
+
+document.getElementById('almacen').innerHTML = almacen.toTable2();
+
+document.getElementById('carritos').innerHTML += carritos.reduce((lista, carro) => lista += carro.toDiv(),"")

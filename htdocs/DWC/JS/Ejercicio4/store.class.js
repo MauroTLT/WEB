@@ -44,7 +44,11 @@ class Store {
         return this.products.sort((a,b) => a.cod - b.cod);
     }
 
-    toHTML() {
-        return '<tr><th>Código</th><th>Nombre</th><th>Uds.</th><th>Precio/u</th><th>Importe</th></tr>' + almacen.orderByCod().reduce((lista, prod) => lista += prod.toTR(),"");
+    toTable() {
+        return '<tr><th>Código</th><th>Nombre</th><th>Uds.</th><th>Precio/u</th><th>Importe</th></tr>' + this.orderByCod().reduce((lista, prod) => lista += prod.toTR(),"");
+    }
+
+    toTable2() {
+        return '<tr><th>Código</th><th>Nombre</th><th>Uds.</th><th>Precio/u</th><th>Importe</th></tr>' + this.orderByCod().reduce((lista, prod) => lista += '<tr>' + prod.toTR() + '</tr>',"");
     }
 }

@@ -40,11 +40,11 @@ carritos[1] = new Cart(2, "Mauro");
 addToCart(carritos[1], 4, 5);
 removeFromCart(carritos[1], 4, 1);
 
-
-
 console.log(carritos[0].products);
 console.log(carritos[1].products);
 console.log(almacen.products);
+
+reload();
 
 function addToCart(carro, cod, units) {
 	let productoA = almacen.findProduct(cod);
@@ -62,6 +62,7 @@ function addToCart(carro, cod, units) {
 	} else {
 		console.log("Codigo no encontrado en ALMACEN");
 	}
+	reload();
 }
 
 function removeFromCart(carro, cod, units) {
@@ -76,8 +77,11 @@ function removeFromCart(carro, cod, units) {
 	} else {
 		console.log("Codigo no encontrado en CARRITO");
 	}
+	reload();
 }
 
-document.getElementById('almacen').innerHTML = almacen.toTable2();
+function reload() {
+	document.getElementById('almacen').innerHTML = almacen.toTable2();
 
-document.getElementById('carritos').innerHTML += carritos.reduce((lista, carro) => lista += carro.toDiv(),"")
+	document.getElementById('carritos').innerHTML += carritos.reduce((lista, carro) => lista += carro.toDiv(),"");
+}

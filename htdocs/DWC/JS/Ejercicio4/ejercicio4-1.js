@@ -62,7 +62,7 @@ function addToCart(carro, cod, units) {
 	} else {
 		console.log("Codigo no encontrado en ALMACEN");
 	}
-	reload();
+	//reload();
 }
 
 function removeFromCart(carro, cod, units) {
@@ -77,7 +77,7 @@ function removeFromCart(carro, cod, units) {
 	} else {
 		console.log("Codigo no encontrado en CARRITO");
 	}
-	reload();
+	//reload();
 }
 
 function reload() {

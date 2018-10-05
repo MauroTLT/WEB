@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
 	document.getElementById("mueve").addEventListener("click", mueveVentana); 
 	window.addEventListener("resize", cambiaMax);	
 });
-
+let velocity = 10;
 let upDown = 0;
 let leftRight = 0;
 var intervalo = null;
@@ -24,7 +24,7 @@ function paraVentana() {
 
 function mueveVentana() {
 	if (intervalo == null) {
-		intervalo = setInterval(mover, 10);
+		intervalo = setInterval(mover, velocity);
 		ventana.document.getElementById('text').innerHTML = "Me muevo";
 	}
 	ventana.focus();
@@ -33,6 +33,14 @@ function mueveVentana() {
 function cambiaMax() {
 	ventana.moveTo(1, 1);
 	ventana.focus();
+}
+
+function cambiarVelocidad(num) {
+	paraVentana();
+	if (!velocity < 1) {
+		velocity += num;
+	}
+	mueveVentana();
 }
 
 function mover() {

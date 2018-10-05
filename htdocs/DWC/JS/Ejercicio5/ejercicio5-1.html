@@ -8,10 +8,13 @@
 		<meta name="keywords" content="practica,dwc,html,javascript">
 	</head>
 	<body>
-		<main>
-			<h1>OPEN THE CONSOLE</h1>
-			<button id="para">Parar</button>
-			<button id="mueve">Mover</button>
+		<main style="text-align: center; margin-top: 20%;">
+			<h1>INCREIBLE VENTANA MOVIBLE</h1>
+			<button id="para" style="transform: scale(2); margin-right: 100px">Parar</button>
+			<button id="mueve" style="transform: scale(2);">Mover</button>
+			<br><br>
+			<button onclick="cambiarVelocidad(-1);">Mas velocidad</button>
+			<button onclick="cambiarVelocidad(+1);">Menos velocidad</button>
 		</main>
 		<script src="ejercicio5-1.js"></script>
 	</body>

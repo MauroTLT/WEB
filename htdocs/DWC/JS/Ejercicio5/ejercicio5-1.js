@@ -9,7 +9,7 @@ let velocity = 10;
 let upDown = 0;
 let leftRight = 0;
 var intervalo = null;
-var ventana = window.open("", "_blank", "top=1,left=1,width=200,height=150");
+var ventana = window.open("", "_blank", "top="+(window.screenY+(window.outerHeight-window.innerHeight))+",left="+window.screenX+",width=200,height=150");
 ventana.document.write("<p id='text'>Me muevo</p>");
 
 
@@ -31,42 +31,45 @@ function mueveVentana() {
 }
 
 function cambiaMax() {
-	ventana.moveTo(1, 1);
+	ventana.moveTo(window.screenX, window.screenY+(window.outerHeight-window.innerHeight));
 	ventana.focus();
 }
 
 function cambiarVelocidad(num) {
 	paraVentana();
-	if (!velocity < 1) {
+	if (!(velocity < 1) || num > 0) {
 		velocity += num;
+		document.getElementById('vel').innerHTML = velocity;
 	}
 	mueveVentana();
 }
 
 function mover() {
+	console.log(window.outerHeight-window.innerHeight);
+	console.log(ventana.screenX+(ventana.innerWidth) + " _ " + (window.screenX+window.innerWidth));
 	ventana.focus();
-	if (ventana.screenY+(ventana.innerHeight) < window.innerHeight && upDown == 0 && leftRight == 0) {
+	if (ventana.screenY+(ventana.innerHeight) < (window.screenY+window.innerHeight) && upDown == 0 && leftRight == 0) {
 		ventana.moveBy(0, 5);
 		return;
 	} else {
 		upDown = 1;
 	}
 
-	if (ventana.screenX+(ventana.innerWidth) < (window.innerWidth-20) && upDown == 1 && leftRight == 0) {
+	if (ventana.screenX+(ventana.outerWidth) < (window.screenX+window.innerWidth) && upDown == 1 && leftRight == 0) {
 		ventana.moveBy(5, 0);
 		return;
 	} else {
 		leftRight = 1;
 	}
 
-	if (ventana.screenY > 100 && upDown == 1 && leftRight == 1) {
+	if (ventana.screenY > (window.screenY+(window.outerHeight-window.innerHeight)) && upDown == 1 && leftRight == 1) {
 		ventana.moveBy(0, -5);
 		return;
 	} else {
 		upDown = 0;
 	}
 
-	if (ventana.screenX > 1 && upDown == 0 && leftRight == 1) {
+	if (ventana.screenX > window.screenX && upDown == 0 && leftRight == 1) {
 		ventana.moveBy(-5, 0);
 		return;
 	} else {

@@ -12,7 +12,7 @@ almacen.delProduct(3, 11);
 almacen.delProduct(3, 7);
 almacen.addProduct(6, 9);
 
-carritos[0] = new Cart(1, "TOPO");
+carritos[0] = new Cart(1, "Adrian");
 
 carritos[1] = new Cart(2, "Mauro");
 
@@ -23,7 +23,11 @@ function addToCart(carro, cod, units) {
 	if (productoA) {
 		let productoC = carro.findProduct(cod);
 		if (productoC) {
-			productoC.changeUnits(units);
+			if (almacen.delProduct(cod, units)) {
+				productoC.changeUnit(units);
+			} else {
+				console.log("No se pueden añadir tantas unidades");
+			}
 		} else {
 			if (almacen.delProduct(cod, units)) {
 				carro.addProduct(cod, units, productoA.name, productoA.price);

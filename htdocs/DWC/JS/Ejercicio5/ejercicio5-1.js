@@ -45,8 +45,7 @@ function cambiarVelocidad(num) {
 }
 
 function mover() {
-	console.log(window.outerHeight-window.innerHeight);
-	console.log(ventana.screenX+(ventana.innerWidth) + " _ " + (window.screenX+window.innerWidth));
+	console.log(ventana.screenX+(ventana.outerWidth) + " _ " + (window.screenX+window.innerWidth));
 	ventana.focus();
 	if (ventana.screenY+(ventana.innerHeight) < (window.screenY+window.innerHeight) && upDown == 0 && leftRight == 0) {
 		ventana.moveBy(0, 5);
@@ -55,7 +54,7 @@ function mover() {
 		upDown = 1;
 	}
 
-	if (ventana.screenX+(ventana.outerWidth) < (window.screenX+window.innerWidth) && upDown == 1 && leftRight == 0) {
+	if (ventana.screenX+(ventana.outerWidth+10) < (window.screenX+window.innerWidth) && upDown == 1 && leftRight == 0) {
 		ventana.moveBy(5, 0);
 		return;
 	} else {

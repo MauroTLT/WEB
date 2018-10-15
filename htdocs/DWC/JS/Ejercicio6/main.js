@@ -6,25 +6,25 @@ let almacen = new Store(1);
 //CREAMOS LOS EVENTOS
 window.addEventListener('load', function () {
 	//AÑADIR PRODUCTO
-	document.getElementById("new-prod").addEventListener("submit", function () {
+	document.getElementById("new-prod").addEventListener("submit", function (event) {
 		event.preventDefault();
 		almacen.addProduct(document.getElementById('new-cod').value, +document.getElementById('new-units').value,document.getElementById('new-name').value,document.getElementById('new-price').value);
 		reload();
 	});
 	//BORRAR PRODUCTO
-	document.getElementById("del-prod").addEventListener("submit", function () {
+	document.getElementById("del-prod").addEventListener("submit", function (event) {
 		event.preventDefault();
 		almacen.delFullProduct(document.getElementById('del-cod').value);
 		reload();
 	});
 	//MODIFICAR PRODUCTO
-	document.getElementById("mod-prod").addEventListener("submit", function () {
+	document.getElementById("mod-prod").addEventListener("submit", function (event) {
 		event.preventDefault();
 		almacen.addProduct(document.getElementById('mod-cod').value, +document.getElementById('mod-units').value);
 		reload();
 	});
 	//CREAR NUEVO CARRITO
-	document.getElementById("new-cart").addEventListener("submit", function () {
+	document.getElementById("new-cart").addEventListener("submit", function (event) {
 		event.preventDefault();
 		let cod = document.getElementById('new-cart-cod').value;
 		if (carritos.length == 0 || !carritos.find(cart => cart.id == cod)) {
@@ -33,14 +33,14 @@ window.addEventListener('load', function () {
 		reload();
 	});
 	//AÑADIR PRODUCTO A CARRITO
-	document.getElementById("add-cart").addEventListener("submit", function () {
+	document.getElementById("add-cart").addEventListener("submit", function (event) {
 		event.preventDefault();
 		let cart = findCart(document.getElementById('add-cart-cod').value);
 		addToCart(cart, document.getElementById('add-cart-prod').value, +document.getElementById('add-cart-units').value);
 		reload();
 	});
 	//QUITAR PRODUCTO DE CARRITO
-	document.getElementById("del-cart").addEventListener("submit", function () {
+	document.getElementById("del-cart").addEventListener("submit", function (event) {
 		event.preventDefault();
 		let cart = findCart(document.getElementById('del-cart-cod').value);
 		removeFromCart(cart, document.getElementById('del-cart-prod').value, +document.getElementById('del-cart-units').value);

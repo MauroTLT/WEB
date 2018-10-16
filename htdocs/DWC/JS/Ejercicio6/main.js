@@ -14,7 +14,9 @@ window.addEventListener('load', function () {
 	//BORRAR PRODUCTO
 	document.getElementById("del-prod").addEventListener("submit", function (event) {
 		event.preventDefault();
-		almacen.delFullProduct(document.getElementById('del-cod').value);
+		if (confirm("¿Está seguro de que desea eliminar el Producto?")) {
+			almacen.delFullProduct(document.getElementById('del-cod').value);
+		}
 		reload();
 	});
 	//MODIFICAR PRODUCTO

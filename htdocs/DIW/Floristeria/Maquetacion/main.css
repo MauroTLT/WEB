@@ -1,0 +1,58 @@
+
+
+/*
+		CSS PARA EL HEADER / NAV
+*/
+header {
+	background-color: #eee;
+	padding: 2px;
+	margin-top: -8px;
+	margin-left: -8px;
+	width: 100.5%;
+	height: 100px;
+}
+
+header img {
+	border: 1px solid black;
+	width: 275px;
+	height: 100px;
+	float: left;
+}
+
+#barraNav {
+	text-align: center;
+	float: left;
+	width: 75%;
+}
+
+#barraNav ul{
+	height: 100px;
+	list-style-type: none;
+}
+
+#barraNav li{
+	display: inline-block;
+	min-width: 150px;
+	float: left;
+	text-align: center;
+	margin: 0 20px 0 0;
+}
+
+#barraNav li a {
+	display: block;
+	padding: 25px;
+	color: #666;
+	background-color: #ddd;
+	text-decoration: none;
+    
+}
+
+#barraNav li a:hover{
+	background-color: #333333;
+	color: #ffffff;
+}
+
+
+/*
+		CSS PARA EL HEADER / NAV
+*/

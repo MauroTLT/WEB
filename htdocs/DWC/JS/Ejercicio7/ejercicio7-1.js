@@ -6,10 +6,13 @@ console.log(fechaCalc.toLocaleDateString());
 window.addEventListener('load', function () {
 	document.getElementById("form").addEventListener("submit", function (event) {
 		event.preventDefault();
-		let dato1 = "";
+		let dato1 = ""; //MENOR o MAYOR
 		let dato2 = ""; //Has acertado el mes
 		let texto = document.getElementById('texto');
 		let fecha = new Date(document.getElementById('fecha').value);
+		fecha.setHours(0);
+		fecha.setMinutes(0);
+		fecha.setSeconds(0);
 		if (!isNaN(fecha.getTime())) {
 			if (fechaCalc.getMonth() == fecha.getMonth()) {
 				dato2 = ". Has acertado el mes";

@@ -1,46 +1,71 @@
 
-
+body {
+	margin: 0px;
+	padding: 0px;
+}
 /*
 		CSS PARA EL HEADER / NAV
 */
-header {
-	background-color: #eee;
-	padding: 2px;
-	margin-top: -8px;
-	margin-left: -8px;
-	width: 100.5%;
-	height: 100px;
+
+@media screen and (max-width:1024px) {
+    header nav img {
+		display: none;
+    }
+	
+	header {
+		overflow-y: visible;
+		overflow-x: scroll;
+	}
+	
+	#barraNav {
+		width: 300% !important;
+
+	}
 }
 
-header img {
+header {
+	font-size: 20px;
+	height: 120px;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: orange;
+	padding: 2px;
+	width: 100%;
+	z-index: 1;
+	box-shadow: 0px 0px 10px 0px; 
+}
+
+header nav img {
 	border: 1px solid black;
-	width: 275px;
+	width: 25%;
 	height: 100px;
 	float: left;
+	margin-top: 10px;
 }
 
 #barraNav {
+	margin: 0 auto;
 	text-align: center;
-	float: left;
-	width: 75%;
+	width: 100%;
 }
 
 #barraNav ul{
-	height: 100px;
+	float: right;
 	list-style-type: none;
 }
 
 #barraNav li{
 	display: inline-block;
-	min-width: 150px;
-	float: left;
+	min-width: 120px;
 	text-align: center;
+	padding-top: 10px;
 	margin: 0 20px 0 0;
 }
 
 #barraNav li a {
 	display: block;
-	padding: 25px;
+	padding: 20px;
 	color: #666;
 	background-color: #ddd;
 	text-decoration: none;
@@ -54,5 +79,47 @@ header img {
 
 
 /*
-		CSS PARA EL HEADER / NAV
+		CSS PARA EL MAIN
 */
+
+#slider {
+	background-color: #ff2ff3;
+	width: 100%;
+	height: 300px;
+	top: 150px;
+	position: relative;
+}
+
+#slider img {
+	border: 1px solid black;
+	width: 60%;
+	height: 90%;
+	top: 5%;
+	left: 20%;
+	position: absolute;
+}
+
+.arrow {
+	top: 30%;
+	position: relative;
+	font-size: 36px;
+	height: 120px;
+}
+
+.arrow-left {
+	left: 10%;
+}
+
+.arrow-right {
+	left: 81%;
+}
+
+/*
+		CSS PARA EL FOOTER
+*/
+
+footer {
+	width: 100%;
+	height: 200px;
+	background-color: red;
+}

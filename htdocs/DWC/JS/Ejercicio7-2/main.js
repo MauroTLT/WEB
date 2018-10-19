@@ -6,55 +6,108 @@ let almacen = new Store(1);
 //CREAMOS LOS EVENTOS
 window.addEventListener('load', function () {
 	//AÑADIR PRODUCTO
-	document.getElementById("new-prod").addEventListener("submit", function (event) {
-		event.preventDefault();
-		if (validateNewProd(document.getElementById('new-cod').value, document.getElementById('new-units').value,document.getElementById('new-name').value, document.getElementById('new-price').value)) {
-			almacen.addProduct(document.getElementById('new-cod').value, +document.getElementById('new-units').value,document.getElementById('new-name').value,document.getElementById('new-price').value);
-			reload();
-		}
-	});
+	document.getElementById("new-prod").addEventListener("submit", newProdAlmacen);
 	//BORRAR PRODUCTO
-	document.getElementById("del-prod").addEventListener("submit", function (event) {
-		event.preventDefault();
-		if (confirm("¿Está seguro de que desea eliminar el Producto?")) {
-			almacen.delFullProduct(document.getElementById('del-cod').value);
-		}
-		reload();
-	});
+	document.getElementById("del-prod").addEventListener("submit", delProdAlmacen);
 	//MODIFICAR PRODUCTO
-	document.getElementById("mod-prod").addEventListener("submit", function (event) {
-		event.preventDefault();
-		almacen.addProduct(document.getElementById('mod-cod').value, +document.getElementById('mod-units').value);
-		reload();
-	});
+	document.getElementById("mod-prod").addEventListener("submit", modProdAlmacen);
 	//CREAR NUEVO CARRITO
-	document.getElementById("new-cart").addEventListener("submit", function (event) {
-		event.preventDefault();
-		let cod = document.getElementById('new-cart-cod').value;
-		if (carritos.length == 0 || !carritos.find(cart => cart.id == cod)) {
-			carritos.push(new Cart(cod, document.getElementById('new-cart-user').value));
-		}
-		reload();
-	});
+	document.getElementById("new-cart").addEventListener("submit", newCart);
 	//AÑADIR PRODUCTO A CARRITO
-	document.getElementById("add-cart").addEventListener("submit", function (event) {
-		event.preventDefault();
-		let cart = findCart(document.getElementById('add-cart-cod').value);
-		addToCart(cart, document.getElementById('add-cart-prod').value, +document.getElementById('add-cart-units').value);
-		reload();
-	});
+	document.getElementById("add-cart").addEventListener("submit", addCart);
 	//QUITAR PRODUCTO DE CARRITO
-	document.getElementById("del-cart").addEventListener("submit", function (event) {
-		event.preventDefault();
-		let cart = findCart(document.getElementById('del-cart-cod').value);
-		removeFromCart(cart, document.getElementById('del-cart-prod').value, +document.getElementById('del-cart-units').value);
-		reload();
-	});
+	document.getElementById("del-cart").addEventListener("submit", delCart);
+
+	document.getElementById("new-prod").setAttribute('novalidate', 'novalidate');
+	document.getElementById("del-prod").setAttribute('novalidate', 'novalidate');
+	document.getElementById("mod-prod").setAttribute('novalidate', 'novalidate');
+	document.getElementById("new-cart").setAttribute('novalidate', 'novalidate');
+	document.getElementById("add-cart").setAttribute('novalidate', 'novalidate');
+	document.getElementById("del-cart").setAttribute('novalidate', 'novalidate');
 });
 
-//DEVUELVE EL CARRITO EN BASE AL ID
-function findCart(cod) {
-	return carritos.find(cart => cart.id == cod);
+function newProdAlmacen(event) {
+	event.preventDefault();
+	let cod = validate(document.getElementById('new-cod'));
+	let units = validate(document.getElementById('new-units'));
+	let name = validate(document.getElementById('new-name'));
+	let price = validate(document.getElementById('new-price'));
+	if (cod && units && name && price) {
+		almacen.addProduct(cod, units, name, price);
+		reload();
+	}
+}
+
+function newProdAlmacen(event) {
+	event.preventDefault();
+	let cod = validate(document.getElementById('new-cod'));
+	let units = validate(document.getElementById('new-units'));
+	let name = validate(document.getElementById('new-name'));
+	let price = validate(document.getElementById('new-price'));
+	if (cod && units && name && price) {
+		almacen.addProduct(cod, +units, name, +price);
+		reload();
+	}
+}
+
+function delProdAlmacen(event) {
+	event.preventDefault();
+	let cod = validate(document.getElementById('del-cod'));
+	if (cod) {
+		if (confirm("¿Está seguro de que desea eliminar el Producto?")) {
+			almacen.delFullProduct(cod);
+			reload();
+		}
+	}
+}
+
+function modProdAlmacen(event) {
+	event.preventDefault();
+	let cod = validate(document.getElementById('mod-cod'));
+	let units = validate(document.getElementById('mod-units'));
+
+	if (cod && units) {
+		almacen.addProduct(cod, +units);
+		reload();
+	}
+}
+
+function newCart(event) {
+	event.preventDefault();
+	let cod = validate(document.getElementById('new-cart-cod'));
+	let user = validate(document.getElementById('new-cart-user'));
+	if (cod && user) {
+		if (carritos.length == 0 || !carritos.find(cart => cart.id == cod)) {
+			carritos.push(new Cart(cod, user));
+			reload();
+		}
+	}
+}
+
+function addCart(event) {
+	event.preventDefault();
+	let cod = validate(document.getElementById('add-cart-cod'));
+	let prod = validate(document.getElementById('add-cart-prod'));
+	let units = validate(document.getElementById('add-cart-units'));
+	if (cod && prod && units) {
+		if (cod = findCart(cod)) {
+			addToCart(cod, prod, +units);
+			reload();
+		}
+	}
+}
+
+function delCart(event) {
+	event.preventDefault();
+	let cod = validate(document.getElementById('del-cart-cod'));
+	let prod = validate(document.getElementById('del-cart-prod'));
+	let units = validate(document.getElementById('del-cart-units'));
+	if (cod && prod && units) {
+		if (cod = findCart(cod)) {
+			removeFromCart(cod, prod, +units);
+			reload();
+		}
+	}
 }
 
 function addToCart(carro, cod, units) {
@@ -77,7 +130,6 @@ function addToCart(carro, cod, units) {
 	} else {
 		console.log("Codigo no encontrado en ALMACEN");
 	}
-	reload();
 }
 
 function removeFromCart(carro, cod, units) {
@@ -95,16 +147,37 @@ function removeFromCart(carro, cod, units) {
 	reload();
 }
 
-function validateNewProd(cod, units, name, precio) {
-	let num = /[0-9]/;
-	if (num.test(cod)) {
-		return false;
+function validate(input) {
+	if (input.nextSibling) {
+		input.parentNode.removeChild(input.nextSibling);
 	}
-	alert("you are black");
+	if (!input.checkValidity()) {
+		var div = document.createElement("DIV");
+		var text = null;
+		if (input.validity.valueMissing) {
+			text = document.createTextNode("Error, campo vacío.");
+		} else if (input.validity.rangeUnderflow) {
+			text = document.createTextNode("Error, dato inferior a lo esperado.");
+		} else if (input.validity.stepMismatch) {
+			text = document.createTextNode("Error, patrón incorrecto.");
+		} else {
+			text = document.createTextNode("Error, el valor no es correcto.");
+		}
+		div.appendChild(text);
+		input.parentNode.insertBefore(div, input.nextSibling);
+		return false;
+	} else {
+		return input.value;
+	}
+}
+
+//DEVUELVE EL CARRITO EN BASE AL ID
+function findCart(cod) {
+	return carritos.find(cart => cart.id == cod);
 }
 
 function reload() {
 	document.getElementById('almacen').innerHTML = almacen.toTable2();
 
-	document.getElementById('carritos').innerHTML = carritos.reduce((lista, carro) => lista += carro.toDiv(),"");
+	document.getElementById('carritos').parentNode.innerHTML = carritos.reduce((lista, carro) => lista += carro.toDiv(),"") + '<div id="carritos"></div>';
 }

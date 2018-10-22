@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
 	//QUITAR PRODUCTO DE CARRITO
 	document.getElementById("del-cart").addEventListener("submit", delCart);
 
+	//Quitamos la validacion de la API del navegador
 	document.getElementById("new-prod").setAttribute('novalidate', 'novalidate');
 	document.getElementById("del-prod").setAttribute('novalidate', 'novalidate');
 	document.getElementById("mod-prod").setAttribute('novalidate', 'novalidate');
@@ -26,17 +27,6 @@ window.addEventListener('load', function () {
 	document.getElementById("del-cart").setAttribute('novalidate', 'novalidate');
 });
 
-function newProdAlmacen(event) {
-	event.preventDefault();
-	let cod = validate(document.getElementById('new-cod'));
-	let units = validate(document.getElementById('new-units'));
-	let name = validate(document.getElementById('new-name'));
-	let price = validate(document.getElementById('new-price'));
-	if (cod && units && name && price) {
-		almacen.addProduct(cod, units, name, price);
-		reload();
-	}
-}
 
 function newProdAlmacen(event) {
 	event.preventDefault();
@@ -110,6 +100,7 @@ function delCart(event) {
 	}
 }
 
+//Función que añade a un carrito tantas unidades de un producto
 function addToCart(carro, cod, units) {
 	let productoA = almacen.findProduct(cod);
 	if (productoA) {
@@ -132,6 +123,7 @@ function addToCart(carro, cod, units) {
 	}
 }
 
+//Función que quita de un carrito tantas unidades de un producto
 function removeFromCart(carro, cod, units) {
 	let productoC = carro.findProduct(cod);
 	if (productoC) {
@@ -144,26 +136,101 @@ function removeFromCart(carro, cod, units) {
 	} else {
 		console.log("Codigo no encontrado en CARRITO");
 	}
-	reload();
 }
 
+
+/*
+Función que recibe un input de cualquier formulario y valida si su contenido es correcto
+Si tiene algun error muestra un mensaje con el error encontrado
+*/
 function validate(input) {
+	//Si ya he tenido un error antes de entrar se lo quitamos, para que vuelva a pasar por la validación entera
 	if (input.nextSibling) {
 		input.parentNode.removeChild(input.nextSibling);
+		input.setCustomValidity('');
 	}
-	if (!input.checkValidity()) {
-		var div = document.createElement("DIV");
-		var text = null;
-		if (input.validity.valueMissing) {
-			text = document.createTextNode("Error, campo vacío.");
-		} else if (input.validity.rangeUnderflow) {
-			text = document.createTextNode("Error, dato inferior a lo esperado.");
-		} else if (input.validity.stepMismatch) {
-			text = document.createTextNode("Error, patrón incorrecto.");
+
+	//Comprobamos todos los posible errores
+	//Error de campo vacio
+	if (input.validity.valueMissing) {
+		input.setCustomValidity("Error, campo vacío.");
+	}
+	//Error de por debajo del MIN
+	else if (input.validity.rangeUnderflow) {
+		input.setCustomValidity("Error, dato inferior a lo esperado.");
+	}
+	//Error de STEP incorrecto
+	else if (input.validity.stepMismatch) {
+		input.setCustomValidity("Error, patrón incorrecto.");
+	}
+	//Error no se encuentra el producto
+	else if (((input.id == "del-cod" || input.id == "mod-cod" || input.id == "add-cart-prod") && !almacen.findProduct(input.value))) {
+		input.setCustomValidity("Error, producto no encontrado.");
+	}
+	//Error no se encuentra el carrito
+	else if (((input.id == "add-cart-cod" || input.id == "del-cart-cod") && !findCart(input.value))) {
+		input.setCustomValidity("Error, carrito no encontrado.");
+	}
+	//Error no se encuentra ese producto en el carrito
+	else if (input.id == "del-cart-prod") {
+		let cart = findCart(document.getElementById('del-cart-cod').value);
+		if (cart !== undefined) {
+			if (!cart.findProduct(input.value)) {
+				input.setCustomValidity("Error, producto no encontrado en carrito.");
+			}
 		} else {
-			text = document.createTextNode("Error, el valor no es correcto.");
+			input.setCustomValidity("Error, producto no se puede buscar, carrito no encontrado.");
 		}
-		div.appendChild(text);
+	}
+	//Conjunto de errores de el input "mod-units" en base al estado de los otros campos de su formulario
+	else if (input.id == "mod-units") {
+		let prod = almacen.findProduct(document.getElementById('mod-cod').value);
+		if (prod !== undefined) {
+			if ((prod.units + (+input.value)) < 0) {
+				input.setCustomValidity("Error, no se pueden quitar tantas unidades.");
+			}
+		} else {
+			input.setCustomValidity("Error, codigo erroneo.");
+		}
+	}
+	//Conjunto de errores de el input "add-cart-units" en base al estado de los otros campos de su formulario
+	else if (input.id == "add-cart-units") {
+		let cart = findCart(document.getElementById('add-cart-cod').value);
+		let prod = almacen.findProduct(document.getElementById('add-cart-prod').value);
+		if (cart !== undefined) {
+			if (prod !== undefined) {
+				if ((prod.units - (+input.value)) < 0) {
+					input.setCustomValidity("Error, no se pueden añadir tantas unidades.");
+				}
+			} else {
+				input.setCustomValidity("Error, producto no encontrado en carrito.");
+			}
+		} else {
+			input.setCustomValidity("Error, producto no se puede buscar, carrito no encontrado.");
+		}
+	}
+	//Conjunto de errores de el input "del-cart-units" en base al estado de los otros campos de su formulario
+	else if (input.id == "del-cart-units") {
+		let cart = findCart(document.getElementById('del-cart-cod').value);
+		if (cart !== undefined) {
+			let prod = cart.findProduct(document.getElementById('del-cart-prod').value);
+			if (prod !== undefined) {
+				if ((prod.units - (+input.value)) < 0) {
+					input.setCustomValidity("Error, no se pueden quitar tantas unidades.");
+				}
+			} else {
+				input.setCustomValidity("Error, producto no encontrado en carrito.");
+			}
+		} else {
+			input.setCustomValidity("Error, producto no se puede buscar, carrito no encontrado.");
+		}
+	}
+	
+	//Si ha saltado algun error se crea el div con el mensaje de error
+	//En caso contrario se devuelve el valor del input
+	if (!input.checkValidity()) {
+		let div = document.createElement("DIV");
+		div.appendChild(document.createTextNode(input.validationMessage));
 		input.parentNode.insertBefore(div, input.nextSibling);
 		return false;
 	} else {

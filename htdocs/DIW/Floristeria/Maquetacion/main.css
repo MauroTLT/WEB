@@ -1,27 +1,12 @@
 
 body {
+	text-align: center;
 	margin: 0px;
 	padding: 0px;
 }
 /*
 		CSS PARA EL HEADER / NAV
 */
-
-@media screen and (max-width:1024px) {
-    header nav img {
-		display: none;
-    }
-	
-	header {
-		overflow-y: visible;
-		overflow-x: scroll;
-	}
-	
-	#barraNav {
-		width: 300% !important;
-
-	}
-}
 
 header {
 	font-size: 20px;
@@ -77,13 +62,12 @@ header nav img {
 	color: #ffffff;
 }
 
-
 /*
-		CSS PARA EL MAIN
+		CSS PARA EL SLIDER
 */
 
 #slider {
-	background-color: #ff2ff3;
+	background-color: green;
 	width: 100%;
 	height: 300px;
 	top: 150px;
@@ -92,10 +76,12 @@ header nav img {
 
 #slider img {
 	border: 1px solid black;
-	width: 60%;
+	width: 59%;
 	height: 90%;
 	top: 5%;
 	left: 20%;
+	right: 21%;
+	float: left;
 	position: absolute;
 }
 
@@ -107,11 +93,146 @@ header nav img {
 }
 
 .arrow-left {
+	float: left;
 	left: 10%;
 }
 
 .arrow-right {
-	left: 81%;
+	float: right;
+	right: 10%;
+}
+
+/*
+		CSS PARA EL MAIN
+*/
+
+main section {
+	margin: 150px 10% 0px 10%;
+	background-color: darkblue;
+}
+
+.linea {
+	height: 350px;
+	padding: 20px;
+	background-color: blue;
+}
+
+div.linea-col-2 {
+	margin: 100px 0px;
+}
+
+div.linea-col-3 .image {
+	height: 350px;
+	min-width: 250px;
+	width: 25%;
+	background-color: cyan;
+	border: 1px solid black;
+	float: left;
+	margin-left: 5.5%;
+
+}
+
+div.linea-col-2 .image {
+	height: 350px;
+	min-width: 300px;
+	width: 40%;
+	background-color: cyan;
+	border: 1px solid black;
+	float: left;
+	margin-left: 5.7%;
+}
+
+.image img {
+	background-color: orange;
+	margin: 9%;
+	margin-bottom: 0px;
+	width: 81%;
+	height: 200px;
+	border: 1px solid black;
+}
+
+.image p {
+	height: 85px;
+	display: block;
+	text-align: justify;
+	padding: 0px 5px;
+	margin: 5px 15px;
+}
+
+/*
+		CSS PARA LA GALERIA
+*/
+
+aside {
+	line-height: 20px;
+	text-align: center;
+	background-color: red;
+	width: 115px;
+	position: fixed;
+	top: 250px;
+	right: 0px;
+}
+
+aside ul{
+	float: right;
+	margin-right: 10px;
+	list-style-type: none;
+}
+
+aside li{
+	display: inline-block;
+	text-align: center;
+	padding-top: 10px;
+}
+
+aside li a {
+	min-width: 50px;
+	min-height: 40px;
+	display: block;
+	padding: 20px;
+	color: #666;
+	background-color: #ddd;
+	text-decoration: none;
+    
+}
+
+aside li a:hover{
+	background-color: #333333;
+	color: #ffffff;
+}
+
+.titulo {
+	margin-left: -5px;
+	font-size: 54px;
+	border: 5px solid black;
+	background-color: green;
+	width: 100%;
+}
+
+/*
+		CSS PARA EL CONTACTO
+*/
+
+.contacto {
+	width: 50%;
+	margin: 0px auto;
+}
+
+#map {
+	height: 400px;
+	margin-top: 250px;
+	background-color: cyan;
+}
+
+#info {
+	height: 300px;
+	margin-bottom: 50px;
+	background-color: blue;
+}
+
+#info p {
+	margin: 0px 25%;
+	padding-top: 20px;
 }
 
 /*
@@ -119,7 +240,74 @@ header nav img {
 */
 
 footer {
-	width: 100%;
+	position: relative;
+	padding-left: 50px;
 	height: 200px;
 	background-color: red;
+}
+
+footer p {
+	position: absolute;
+	left: 20%;
+	border: 1px black solid;
+	width: 50%;
+}
+
+#rrss {
+	position: absolute;
+	border-left: 5px dotted black;
+	right: 0px;
+	width: 280px;
+	height: 180px;
+	padding: 10px;
+}
+
+#rrss button {
+	margin: 5px 7px;
+	border-radius: 30px 30px 30px 30px;
+	width: 75px;
+	height: 75px;
+	margin-top: 10px;
+}
+
+@media screen and (max-width:1224px) {
+    header nav img {
+		display: none;
+    }
+	
+	header {
+		overflow-y: visible;
+		overflow-x: scroll;
+	}
+	
+	#barraNav {
+		width: 100% !important;
+	}
+
+	.linea {
+		overflow-y: scroll;
+	}
+
+	footer {
+		position: relative;
+		height: 410px !important;
+	}
+
+	footer p {
+		position: absolute;
+		border: 1px black solid;
+		width: 60%;
+		height: 175px;
+	}
+
+	#rrss {
+		top: 200px;
+		right: 10%;
+		border-top: 5px dotted black;
+		border-left: none;
+	}
+
+	aside {
+		display: none;
+	}
 }

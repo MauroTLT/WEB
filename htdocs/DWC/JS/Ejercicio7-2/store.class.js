@@ -15,7 +15,7 @@ class Store {
             this.products.push(new Product(cod,nombre,precio,units));
         } else {
             if (!this.findProduct(cod)) {
-                console.log("Producto no encontrado, si quiere añadir indique nombre y precio");
+                console.log("Producto no encontrado");
                 return false;
             } else {
                 this.findProduct(cod).changeUnit(units);

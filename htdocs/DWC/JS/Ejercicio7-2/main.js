@@ -176,7 +176,7 @@ function validate(input) {
 		let cart = findCart(document.getElementById('del-cart-cod').value);
 		if (cart !== undefined) {
 			if (!cart.findProduct(input.value)) {
-				input.setCustomValidity("Error, producto no encontrado en carrito.");
+				input.setCustomValidity("Error, producto no encontrado en almacen.");
 			}
 		} else {
 			input.setCustomValidity("Error, producto no se puede buscar, carrito no encontrado.");

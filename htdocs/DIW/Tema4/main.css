@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; }
 header
 {
-	font-family: Roboto;
+	font-family: 'Cabin Sketch';
 	height: 200px;
 	background-color: #0000FF;
 }
@@ -14,7 +14,7 @@ nav
 li /*Hacemos los enlaces un poco mas grandes*/
 {
 	font-size: 28px;
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Mystery Quest', cursive;
 	display: inline;
 	margin: 2px 10px;
 }
@@ -37,20 +37,20 @@ main
 
 h1
 {
-	font-family: 'Roboto', cursive;
+	font-family: 'Cabin Sketch', cursive;
 	line-height: 100px;
 	margin-left: 20px;
 }
 
 h3
 {
-	font-family: 'Dancing Script', serif;
+	font-family: 'Cabin Sketch', serif;
 	font-size: 18px;
 }
 
 h2
 {
-	font-family: 'Dancing Script', sans-serif;
+	font-family: 'Cabin Sketch', sans-serif;
 	font-size: 26px;
 }
 
@@ -61,8 +61,8 @@ h4
 
 p
 {
-	font-family: 'Roboto', cursive;
-	font-size: 16px;
+	font-family: 'Mystery Quest', cursive;
+	font-size: 18px;
 	text-align: justify;
 }
 

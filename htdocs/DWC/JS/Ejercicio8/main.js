@@ -1,10 +1,12 @@
 'use strict'
 
+let bbdd = new XMLHttpRequest();
 let carritos = [];
 let almacen = new Store(1);
 
 //CREAMOS LOS EVENTOS
 window.addEventListener('load', function () {
+	getProducts();
 	//AÑADIR PRODUCTO
 	document.getElementById("new-prod").addEventListener("submit", newProdAlmacen);
 	//BORRAR PRODUCTO
@@ -27,6 +29,21 @@ window.addEventListener('load', function () {
 	document.getElementById("del-cart").setAttribute('novalidate', 'novalidate');
 });
 
+function getProducts() {
+	bbdd.open('GET', 'http://localhost:3000/products');
+	bbdd.send();
+	bbdd.addEventListener('readystatechange', function() {
+		if (bbdd.readyState===4) {
+		    if (bbdd.status===200) {
+		        let usuarios=JSON.parse(bbdd.responseText);  // Convertirmos los datos JSON a un objeto
+		        console.log(usuarios);
+		    } else {
+		        console.log("Error "+bbdd.status+" ("+bbdd.statusText+") en la petición");
+		    }
+		}
+	})
+	console.log("Petición acabada");
+}
 
 function newProdAlmacen(event) {
 	event.preventDefault();
@@ -35,6 +52,18 @@ function newProdAlmacen(event) {
 	let name = validate(document.getElementById('new-name'));
 	let price = validate(document.getElementById('new-price'));
 	if (cod && units && name && price) {
+		
+		let newProduct = {
+		    id: cod,
+		    name: name,
+		    price: price,
+		    units: units
+		}
+
+		bbdd.open("POST", "http://localhost:3000/products");
+		bbdd.setRequestHeader("Content-Type", "application/json");
+		bbdd.send(JSON.stringify(newProduct));
+
 		almacen.addProduct(cod, +units, name, +price);
 		reload();
 	}
@@ -129,7 +158,7 @@ function removeFromCart(carro, cod, units) {
 	if (productoC) {
 		if (carro.delProduct(cod, units)) {
 			if (carro.findProduct(cod).units == 0) {
-				carro.products = carro.products.filter(prod=>prod.cod !== cod);
+				carro.products = carro.products.filter(prod=>prod.id !== cod);
 			}
 			almacen.addProduct(cod, units);
 		}

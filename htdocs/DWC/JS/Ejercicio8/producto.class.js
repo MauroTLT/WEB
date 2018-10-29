@@ -1,8 +1,8 @@
 'use strict'
 
 class Product {
-    constructor(cod, name, price, units = 1) {
-        this.cod = cod;
+    constructor(id, name, price, units = 1) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.units = units;
@@ -29,6 +29,6 @@ class Product {
     }
 
     toTR() {
-        return /*'<tr id="' + this.cod + '">*/'<td>' + this.cod + '</td><td>' + this.name + '</td><td>' + this.units + '</td><td>' + this.price + ' €/u</td><td>' + this.productImport().toFixed(2) + ' €</td>'/*</tr>'*/;
+        return /*'<tr id="' + this.id + '">*/'<td>' + this.id + '</td><td>' + this.name + '</td><td>' + this.units + '</td><td>' + this.price + ' €/u</td><td>' + this.productImport().toFixed(2) + ' €</td>'/*</tr>'*/;
     }
 }

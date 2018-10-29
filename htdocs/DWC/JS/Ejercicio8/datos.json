@@ -1,3 +1,16 @@
 {
-"products":[]
+  "products": [
+    {
+      "id": "1",
+      "name": "tele",
+      "units": "10",
+      "price": "50"
+    },
+    {
+      "id": "4",
+      "name": "tele",
+      "price": "34",
+      "units": "1"
+    }
+  ]
 }

@@ -17,6 +17,12 @@
       "name": "comederos de mariposas",
       "price": "0.37",
       "units": "17"
+    },
+    {
+      "name": "uhi",
+      "price": 87,
+      "units": 808,
+      "id": "kl"
     }
   ]
 }

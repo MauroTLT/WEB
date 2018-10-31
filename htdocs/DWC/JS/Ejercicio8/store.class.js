@@ -7,7 +7,7 @@ class Store {
     }
 
     findProduct(id) {
-        return this.products.find(product => product.cod == id);
+        return this.products.find(product => product.id == id);
     }
 
     addProduct(cod, units, nombre = "", precio = 0) {
@@ -30,7 +30,7 @@ class Store {
 
     delFullProduct(cod) {
         if (this.findProduct(cod)) {
-            this.products = this.products.filter(prod=>prod.cod !== cod);
+            this.products = this.products.filter(prod=>prod.id !== cod);
             return true;
         }
         return false;

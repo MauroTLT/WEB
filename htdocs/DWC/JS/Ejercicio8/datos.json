@@ -1,16 +1,22 @@
 {
   "products": [
     {
-      "id": "1",
       "name": "tele",
-      "units": "10",
-      "price": "50"
+      "price": "50",
+      "units": 60,
+      "id": "1"
     },
     {
-      "id": "4",
-      "name": "tele",
-      "price": "34",
-      "units": "1"
+      "id": "2",
+      "name": "patata",
+      "price": "0.21",
+      "units": "13"
+    },
+    {
+      "id": "3",
+      "name": "comederos de mariposas",
+      "price": "0.37",
+      "units": "17"
     }
   ]
 }

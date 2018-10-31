@@ -5,7 +5,7 @@ class Product {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.units = units;
+        this.units = +units;
     }
 
     changeUnit(cantidad) {

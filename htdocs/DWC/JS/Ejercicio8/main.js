@@ -3,10 +3,10 @@
 let bbdd = new XMLHttpRequest();
 let carritos = [];
 let almacen = new Store(1);
-
+getProducts();
 //CREAMOS LOS EVENTOS
 window.addEventListener('load', function () {
-	getProducts();
+	
 	//AÑADIR PRODUCTO
 	document.getElementById("new-prod").addEventListener("submit", newProdAlmacen);
 	//BORRAR PRODUCTO
@@ -30,19 +30,19 @@ window.addEventListener('load', function () {
 });
 
 function getProducts() {
+	bbdd = new XMLHttpRequest();
 	bbdd.open('GET', 'http://localhost:3000/products');
 	bbdd.send();
-	bbdd.addEventListener('readystatechange', function() {
-		if (bbdd.readyState===4) {
-		    if (bbdd.status===200) {
-		        let usuarios=JSON.parse(bbdd.responseText);  // Convertirmos los datos JSON a un objeto
-		        console.log(usuarios);
-		    } else {
-		        console.log("Error "+bbdd.status+" ("+bbdd.statusText+") en la petición");
-		    }
+	bbdd.addEventListener('load', function() {
+		if (bbdd.status===200) {
+			let array = JSON.parse(bbdd.responseText);  // Convertirmos los datos JSON a un objeto
+			array.forEach((prod)=> almacen.addProduct(prod.id, prod.units, prod.name, prod.price));
+			reload();
+		} else {
+			console.log("Error "+bbdd.status+" ("+bbdd.statusText+") en la petición");
 		}
-	})
-	console.log("Petición acabada");
+	});
+	console.log("Productos encontrados en la BBDD");
 }
 
 function newProdAlmacen(event) {
@@ -52,20 +52,26 @@ function newProdAlmacen(event) {
 	let name = validate(document.getElementById('new-name'));
 	let price = validate(document.getElementById('new-price'));
 	if (cod && units && name && price) {
-		
+
 		let newProduct = {
 		    id: cod,
 		    name: name,
 		    price: price,
 		    units: units
 		}
-
+		bbdd = new XMLHttpRequest();
 		bbdd.open("POST", "http://localhost:3000/products");
 		bbdd.setRequestHeader("Content-Type", "application/json");
 		bbdd.send(JSON.stringify(newProduct));
-
-		almacen.addProduct(cod, +units, name, +price);
-		reload();
+		bbdd.addEventListener('load', function() {
+			if (bbdd.status===201) {
+				almacen.addProduct(cod, +units, name, +price);
+				reload();
+			} else {
+				console.log("Error "+bbdd.status+" ("+bbdd.statusText+") en la petición");
+			}
+		});
+		console.log("Producto Añadido");
 	}
 }
 
@@ -74,8 +80,19 @@ function delProdAlmacen(event) {
 	let cod = validate(document.getElementById('del-cod'));
 	if (cod) {
 		if (confirm("¿Está seguro de que desea eliminar el Producto?")) {
-			almacen.delFullProduct(cod);
-			reload();
+			bbdd = new XMLHttpRequest();
+			bbdd.open("DELETE", "http://localhost:3000/products/"+cod);
+			bbdd.setRequestHeader("Content-Type", "application/json");
+			bbdd.send();
+			bbdd.addEventListener('load', function() {
+				if (bbdd.status===200) {
+					almacen.delFullProduct(cod);
+					reload();
+				} else {
+					console.log("Error "+bbdd.status+" ("+bbdd.statusText+") en la petición");
+				}
+			});
+			console.log("Borrado Completado");
 		}
 	}
 }
@@ -86,8 +103,26 @@ function modProdAlmacen(event) {
 	let units = validate(document.getElementById('mod-units'));
 
 	if (cod && units) {
-		almacen.addProduct(cod, +units);
-		reload();
+		let product = almacen.findProduct(cod);
+		let aux = product.units + (+units);
+		let modProduct = {
+		    name: product.name,
+		    price: product.price,
+		    units: aux
+		}
+		bbdd = new XMLHttpRequest();
+		bbdd.open("PUT", "http://localhost:3000/products/"+cod);
+		bbdd.setRequestHeader("Content-Type", "application/json");
+		bbdd.send(JSON.stringify(modProduct));
+		bbdd.addEventListener('load', function() {
+			if (bbdd.status===200) {
+				almacen.addProduct(cod, +units);
+				reload();
+			} else {
+				console.log("Error "+bbdd.status+" ("+bbdd.statusText+") en la petición");
+			}
+		});
+		console.log("Modificación realizada con exito");
 	}
 }
 

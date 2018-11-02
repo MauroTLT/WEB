@@ -1,0 +1,12 @@
+.cart {
+	border: 1px solid red;
+}
+
+input:invalid {
+	border: 1px solid red;
+}
+
+input + div {
+	color: red;
+	font-weight: bold;
+}

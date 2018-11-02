@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "name": "tele",
+      "price": "50",
+      "units": 60,
+      "id": "1"
+    },
+    {
+      "id": "3",
+      "name": "comederos de mariposas",
+      "price": "0.37",
+      "units": "17"
+    },
+    {
+      "id": "4",
+      "name": "topositivo",
+      "price": "1000000",
+      "units": 99
+    }
+  ]
+}

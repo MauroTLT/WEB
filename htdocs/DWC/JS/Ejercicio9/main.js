@@ -2,7 +2,8 @@
 let rowName="ABCDEFGH";
 
 window.addEventListener('load', () => {
-	let posicion=prompt("Indica la posición inicial del caballo","D5");
+	let position = rowName.charAt(Math.floor((Math.random()*7)+1))+Math.floor((Math.random()*7)+1);
+	posicion = prompt("Indica la posición inicial del caballo",position);
 	drawTable(posicion);
 })
 
@@ -13,8 +14,7 @@ function drawTable(initPos) {
 	for (let i=8; i>0; i--) {
 		tabla+=`<tr><th>${i}</th>`;
 		for (let j=0; j<8; j++) {
-			tabla+=`
-				<td id="${rowName.charAt(j)+i}" class="${((i+j)%2)?'negra':'blanca'}"></td>`;
+			tabla+=`<td id="${rowName.charAt(j)+i}" class="${((i+j)%2)?'negra':'blanca'}"></td>`;
 		}
 		tabla+='</tr><tr><th></th>';
 	}
@@ -23,9 +23,11 @@ function drawTable(initPos) {
 		tabla+=`<th>${rowName.charAt(i)}</th>`;
 	}
 	tabla+='</tr>';
+	document.getElementById("tablero").innerHTML = tabla;
+	drawPiece(initPos);
+}
 
-	document.getElementById("tablero").innerHTML=tabla;
-
+function drawPiece(initPos) {
 	let img = document.createElement("img");
 	img.id = "img";
 	img.setAttribute("src", "images/caballo.png");

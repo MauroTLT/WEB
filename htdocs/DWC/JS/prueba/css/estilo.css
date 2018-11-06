@@ -1,0 +1,21 @@
+.blanca, .negra {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+}
+
+.blanca {
+	background-color: #F4A460;
+	border: 5px solid #F4A460;
+}
+
+.negra {
+	background-color: #4B3621;
+	border: 5px solid #4B3621;
+}
+.dropable {
+	border: 5px solid #BA0000;
+}
+#tablero {
+	margin: 0 auto;
+}

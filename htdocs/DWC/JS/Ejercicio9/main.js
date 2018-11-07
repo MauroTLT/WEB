@@ -2,9 +2,14 @@
 let rowName="ABCDEFGH";
 
 window.addEventListener('load', () => {
+	let test = /^[A-Z]{1}[1-8]{1}$/;
 	let position = rowName.charAt(Math.floor((Math.random()*7)+1))+Math.floor((Math.random()*7)+1);
-	posicion = prompt("Indica la posición inicial del caballo",position);
-	drawTable(posicion);
+	let pos = prompt("Indica la posición inicial del caballo",position);
+	while (!test.test(pos)) {
+		pos = prompt("Debes indicar una posición inicial del caballo CORRECTA",position);
+	}
+	document.getElementById("posicion").innerHTML = pos;
+	drawTable(pos);
 })
 
 function drawTable(initPos) {
@@ -48,9 +53,10 @@ document.addEventListener("dragover", function(event) {
 
 document.addEventListener("drop", function(event) {
 	event.preventDefault();
-	if (event.target.classList.contains('dropable')) {
+	if (event.target.classList.contains('dropable') && event.dataTransfer.getData("id") == "img") {
 		var data = event.dataTransfer.getData("id");
 		event.target.appendChild(document.getElementById(data));
+		document.getElementById("posicion").innerHTML = document.getElementById("img").parentNode.id;
 		markNewPosition();
 	}
 });

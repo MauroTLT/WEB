@@ -1,4 +1,10 @@
 
+/*
+	Tipografias para la página
+*/
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Playfair+Display:400,700');
+
+
 body {
 	text-align: center;
 	margin: 0px;

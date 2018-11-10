@@ -1,0 +1,522 @@
+body {
+	text-align: center;
+	margin: 0px 25px;
+	padding: 0px;
+}
+
+/*
+		CSS PARA EL HEADER / NAV
+*/
+
+header img {
+	width: 100%;
+	height: 250px;
+}
+
+#barraNav {
+	font-size: 20px;
+	height: 70px;
+	top: 0;
+	left: 0;
+	position: -webkit-sticky;
+	position: sticky;
+	background-color: orange;
+	width: 100%;
+	z-index: 1;
+	box-shadow: 0px 0px 10px 0px;
+}
+
+#barraNav button {
+	float: left;
+	margin: 5px 0px 5px 2%;
+	width: 60px;
+	height: 60px;
+}
+
+#barraNav button:first-child {
+	margin: 5px 0px 5px 7%;
+}
+
+#barraNav form {
+	position: absolute;
+	right: 0px;
+	width: 600px;
+	height: 100%;
+}
+
+#barraNav form button {
+	float: right;
+	margin: 5px 150px 5px 0px !important;
+}
+
+#barraNav form input {
+	float: right;
+	height: 30px;
+	border-radius: 20px;
+	margin: 15px 5px;
+}
+
+/*
+		CSS PARA EL ASIDE
+*/
+
+#navAside {
+	font-size: 30px;
+	width: 300px;
+	height: 310px;
+	top: 70px;
+	left: 0;
+	position: -webkit-sticky;
+	position: sticky;
+}
+
+#navAside ul {
+	padding: 0px 0px;
+	list-style-type: none;
+}
+
+
+
+#navAside li {
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	display: inline-block;
+	min-width: 100%;
+	margin-top: 20px;
+	margin-right: 100px;
+	left: 0px;
+}
+
+#navAside li a {
+	display: block;
+	padding: 5px;
+	color: white;
+	background-color: darkred;
+	text-decoration: none;
+
+}
+
+#navAside li a:hover {
+	background-color: #333333;
+	color: #ffffff;
+}
+
+#novedades {
+	font-size: 20px;
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	margin-top: 43px;
+	background-color: lightgreen;
+}
+
+/*
+		CSS PARA EL MAIN
+*/
+
+main {
+	margin: -310px 125px 0px 325px;
+	padding: 20px;
+	min-height: 900px;
+}
+
+main header {
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	background-color: cyan;
+	height: 125px;
+}
+
+main header h1 {
+	float: left;
+	margin: 30px 20%;
+	font-size: 46px;
+}
+
+main header img {
+	float: right;
+	margin-right: 50px;
+	width: 125px;
+	height: 125px;
+}
+
+main header img:first-child {
+	float: left;
+	margin-left: 50px;
+	width: 125px;
+	height: 125px;
+}
+
+main section,
+div {
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+}
+
+main #recDestacada {
+	float: left;
+	background-color: magenta;
+	width: 33%;
+	height: 400px;
+	z-index: 20;
+}
+
+main #recTemporada {
+	float: right;
+	background-color: pink;
+	width: 65%;
+	height: 400px;
+}
+
+main #slider {
+	margin-top: 20px;
+	float: left;
+	background-color: cyan;
+	width: 100%;
+	height: 400px;
+}
+
+main #slider img {
+	background-color: red;
+	margin: 50px 10px;
+	width: 300px;
+	height: 300px;
+}
+
+/*
+		CSS PARA RECETAS
+*/
+
+main #filter {
+	margin-top: 25px;
+	background-color: cyan;
+	height: 75px;
+}
+
+main #filter select {
+	width: 220px;
+	height: 50px;
+	margin: 15px 20px 15px 20px;
+}
+
+main #filter h1 {
+	font-size: 36px;
+	float: left;
+	margin: 15px 25px 15px 75px;
+}
+
+main #fotos {
+	background-color: yellow;
+	margin: 25px 0px;
+}
+
+main #fotos .linea {
+	box-shadow: none;
+	height: 300px;
+}
+
+main #fotos .linea a img {
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	background-color: lightgrey;
+	width: 410px;
+	height: 250px;
+	margin: 25px 15px 25px 15px;
+}
+
+/*
+		CSS PARA POST RECETA
+*/
+.receta-post {
+	background-color: yellow;
+	height: 620px;
+	padding: 10px 10px 10px 20px;
+	margin-bottom: 30px;
+}
+
+.receta-post article * {
+	position: static;
+	text-align: left;
+	float: left;
+	margin: 10px 15px;
+	font-size: 20px;
+	padding: 5px;
+	width: 96%;
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+}
+
+.receta-post article ul {
+	width: 94%;
+	background-color: indianred;
+	height: 300px;
+}
+
+.receta-post article span {
+	width: 94%;
+	background-color: indianred;
+	height: 300px;
+}
+
+.receta-post article li {
+	background-color: lightskyblue;
+	width: 75%;
+	margin: 10px 20px 0 12.5%;
+}
+
+.receta-post article p,
+.receta-post article div {
+	background-color: lightgreen;
+	height: 500px;
+}
+
+.receta-post article img {
+	background-color: ivory;
+	height: 325px;
+}
+
+.tit-receta {
+	float: right;
+	margin: 10px 28px 10px 14px;
+	background-color: tomato;
+	height: 50px;
+	width: 46.8%;
+	font-size: 30px;
+	line-height: 150%;
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+}
+#pasos .tit-receta, #fotos .tit-receta{
+	float: left;
+}
+.receta-post article img.parrafo-half,
+.receta-post article div.parrafo-half {
+	display: inline-block;
+	width: 46%;
+	margin: 10px 28px 10px 15px;
+	height: 500px;
+}
+
+.receta-post article img.parrafo-half {
+	height: 570px;
+}
+#fotos article img.parrafo-half{
+	position: relative;
+	height: 470px;
+	margin-right: 5px;
+}
+#fotos article img.quarter{
+	position: relative;
+	height: 223px;
+	width: 305px;
+	margin: 10px 5px 5px 10px;
+}
+.receta-post article span {
+	display: block;
+	height: 60px;
+	width: 50%;
+	margin: 20px 25%;
+	text-align: center;
+	line-height: 300%;
+}
+
+.receta-post article img#tiempo-hacer {
+	height: 50px;
+	width: 50px;
+	margin: auto;
+	margin-left: 25%;
+}
+
+/*
+		CSS PARA TRUCOS Y CONSEJOS
+*/
+
+section.articulo {
+	margin-top: 20px;
+	background-color: yellow;
+	height: 450px;
+	padding: 10px;
+}
+
+section.articulo .titulo {
+	font-size: 30px;
+	background-color: green;
+	width: 100%;
+	height: 50px;
+}
+
+section.articulo .titulo h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+section.articulo .content-article {
+	position: static;
+	float: left;
+	margin-top: 5px;
+	font-size: 20px;
+	padding: 5px;
+	background-color: lightgreen;
+	width: 48%;
+	height: 425px;
+}
+
+section.articulo .content-article .keywords {
+	float: left;
+	position: relative;
+	top: 115px;
+	background-color: green;
+	width: 100%;
+	height: 75px;
+}
+
+section.articulo .content-article .keywords button {
+	width: 120px;
+	height: 50px;
+	margin: 10px 20px 10px 20px;
+}
+
+section.articulo img {
+	float: right;
+	margin-top: 5px;
+	background-color: pink;
+	width: 48%;
+	height: 425px;
+	padding: 5px;
+}
+
+/*
+		CSS PARA POST TRUCOS Y CONSEJOS
+*/
+#post-truco-consejo {
+	background-color: yellow;
+	height: 1280px;
+	padding: 10px 10px 10px 20px;
+}
+
+#post-truco-consejo article * {
+	position: static;
+	text-align: left;
+	float: left;
+	margin: 10px 15px;
+	font-size: 20px;
+	padding: 5px;
+	width: 96%;
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+}
+
+#post-truco-consejo article p {
+	background-color: lightgreen;
+	height: 265px;
+}
+
+#post-truco-consejo article img {
+	background-color: ivory;
+	height: 325px;
+}
+
+#tit-truco-consejo {
+	position: absolute;
+	margin: 25px 30px;
+	background-color: tomato;
+	height: 50px;
+	width: 40%;
+	font-size: 30px;
+	line-height: 150%;
+	-webkit-box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+	box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.41);
+}
+
+#post-truco-consejo article img.parrafo-half,
+#post-truco-consejo article p.parrafo-half {
+	display: inline-block;
+	width: 46%;
+	margin: 10px 28px 10px 15px;
+	height: 300px;
+}
+
+/*
+		CSS PARA EL CONTACTO
+*/
+#sobre-nosotros {
+	margin-top: 20px;
+	background-color: yellow;
+	height: 760px;
+	padding: 10px 10px 10px 20px;
+}
+
+#sobre-nosotros article p {
+	position: static;
+	text-align: left;
+	float: left;
+	margin: 10px 15px;
+	font-size: 20px;
+	padding: 5px;
+	background-color: lightgreen;
+	width: 96%;
+	height: 225px;
+}
+
+/*
+		CSS PARA EL FOOTER
+*/
+
+footer {
+	position: absolute;
+	left: 0px;
+	width: 97.3%;
+	padding-left: 50px;
+	height: 200px;
+	background-color: red;
+}
+
+footer section:first-child p {
+	border: 1px black solid;
+	width: 95%;
+}
+
+footer section:first-child {
+	position: absolute;
+	left: 10%;
+	width: 75%;
+	height: 100%;
+}
+
+#rrss {
+	position: absolute;
+	border-left: 5px dotted black;
+	right: 0px;
+	width: 280px;
+	height: 180px;
+	padding: 10px;
+}
+
+#rrss button {
+	margin: 5px 7px;
+	border-radius: 30px 30px 30px 30px;
+	width: 75px;
+	height: 75px;
+	margin-top: 10px;
+}
+
+@media screen and (max-width:1224px) {
+
+	footer {
+		position: relative;
+		height: 410px !important;
+	}
+
+	footer p {
+		position: absolute;
+		border: 1px black solid;
+		width: 60%;
+		height: 175px;
+	}
+
+	#rrss {
+		top: 200px;
+		right: 10%;
+		border-top: 5px dotted black;
+		border-left: none;
+	}
+}

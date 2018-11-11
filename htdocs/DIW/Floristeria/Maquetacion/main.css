@@ -4,8 +4,12 @@
 */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Playfair+Display:400,700');
 
+* {
+	font-family: "Lato";
+}
 
 body {
+	background-color: #e5ffde;
 	text-align: center;
 	margin: 0px;
 	padding: 0px;
@@ -16,15 +20,15 @@ body {
 
 header {
 	font-size: 20px;
-	height: 120px;
+	height: 100px;
 	top: 0;
 	left: 0;
 	position: fixed;
-	background-color: orange;
+	background-color: #0db20e;
 	padding: 2px;
 	width: 100%;
 	z-index: 1;
-	box-shadow: 0px 0px 10px 0px; 
+	box-shadow: 0px 0px 10px 0px;
 }
 
 header nav img {
@@ -32,13 +36,24 @@ header nav img {
 	width: 25%;
 	height: 100px;
 	float: left;
-	margin-top: 10px;
 }
 
 #barraNav {
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
+}
+
+#barraNav button {
+	text-align: center;
+	margin-right: 50px;
+	width: 100px;
+	height: 100px;
+}
+
+#barraNav button img {
+	width: 80px;
+	height: 75px;
 }
 
 #barraNav ul{
@@ -50,11 +65,11 @@ header nav img {
 	display: inline-block;
 	min-width: 120px;
 	text-align: center;
-	padding-top: 10px;
 	margin: 0 20px 0 0;
 }
 
 #barraNav li a {
+	font-family: 'Playfair Display', serif;
 	display: block;
 	padding: 20px;
 	color: #666;
@@ -73,7 +88,7 @@ header nav img {
 */
 
 #slider {
-	background-color: green;
+	background-color: #FF6600;
 	width: 100%;
 	height: 300px;
 	top: 150px;
@@ -114,13 +129,12 @@ header nav img {
 
 main section {
 	margin: 150px 10% 0px 10%;
-	background-color: darkblue;
+	/*background-color: #FF6600;*/
 }
 
 .linea {
 	height: 350px;
 	padding: 20px;
-	background-color: blue;
 }
 
 div.linea-col-2 {
@@ -131,7 +145,7 @@ div.linea-col-3 .image {
 	height: 350px;
 	min-width: 250px;
 	width: 25%;
-	background-color: cyan;
+	background-color: #9335bf;
 	border: 1px solid black;
 	float: left;
 	margin-left: 5.5%;
@@ -142,14 +156,14 @@ div.linea-col-2 .image {
 	height: 350px;
 	min-width: 300px;
 	width: 40%;
-	background-color: cyan;
+	background-color: #9335bf;
 	border: 1px solid black;
 	float: left;
 	margin-left: 5.7%;
 }
 
 .image img {
-	background-color: orange;
+	background-color: white;
 	margin: 9%;
 	margin-bottom: 0px;
 	width: 81%;
@@ -160,6 +174,8 @@ div.linea-col-2 .image {
 .image p {
 	height: 85px;
 	display: block;
+	color: #dddddd;
+	font-weight: bold;
 	text-align: justify;
 	padding: 0px 5px;
 	margin: 5px 15px;
@@ -172,7 +188,7 @@ div.linea-col-2 .image {
 aside {
 	line-height: 20px;
 	text-align: center;
-	background-color: red;
+	background-color: #0db20e;
 	width: 125px;
 	position: fixed;
 	top: 250px;
@@ -211,7 +227,7 @@ aside li a:hover{
 	margin-left: -5px;
 	font-size: 54px;
 	border: 5px solid black;
-	background-color: green;
+	background-color: #6eee16;
 	width: 100%;
 }
 
@@ -226,17 +242,18 @@ aside li a:hover{
 
 #map {
 	height: 400px;
-	margin-top: 250px;
-	background-color: cyan;
+	margin-top: 200px;
+	background-color: #b7b7b7;
 }
 
 #info {
 	height: 300px;
-	margin-bottom: 50px;
-	background-color: blue;
+	margin-bottom: 75px;
+	background-color: #666666;
 }
 
 #info p {
+	color: #dddddd;
 	margin: 0px 25%;
 	padding-top: 20px;
 }
@@ -249,10 +266,11 @@ footer {
 	position: relative;
 	padding-left: 50px;
 	height: 200px;
-	background-color: red;
+	background-color: #666666;
 }
 
 footer p {
+	color: #dddddd;
 	position: absolute;
 	left: 20%;
 	border: 1px black solid;
@@ -269,6 +287,8 @@ footer p {
 }
 
 #rrss button {
+	background-color: red;
+	border-color: pink;
 	margin: 5px 7px;
 	border-radius: 30px 30px 30px 30px;
 	width: 75px;

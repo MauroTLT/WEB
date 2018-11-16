@@ -1,0 +1,53 @@
+{
+  "tasks": [
+    {
+      "user": "21212121A",
+      "task": "qwqwe",
+      "date": "2018-11-07T11:45:18.540Z",
+      "prio": "L",
+      "id": 3
+    },
+    {
+      "user": "21212121A",
+      "task": "asd asdasdada",
+      "date": "2018-11-09T11:59:35.139Z",
+      "prio": "H",
+      "id": 4
+    },
+    {
+      "user": "11111111Z",
+      "task": "Estudiar para el examen de JS",
+      "date": "2018-11-09T12:21:29.504Z",
+      "prio": "H",
+      "id": 5
+    },
+    {
+      "user": "12345678R",
+      "task": "Prueba 1",
+      "date": "2018-11-16T18:49:37.778Z",
+      "prio": "L",
+      "id": 6
+    },
+    {
+      "user": "12345678R",
+      "task": "Prueba 2",
+      "date": "2018-11-16T18:49:41.814Z",
+      "prio": "H",
+      "id": 7
+    },
+    {
+      "user": "12345678R",
+      "task": "Prueba 5",
+      "date": "2018-11-16T19:33:33.313Z",
+      "prio": "L",
+      "id": 9
+    },
+    {
+      "user": "13456789G",
+      "task": "Prueba 6",
+      "date": "2018-11-16T19:34:12.218Z",
+      "prio": "H",
+      "id": 10
+    }
+  ]
+}

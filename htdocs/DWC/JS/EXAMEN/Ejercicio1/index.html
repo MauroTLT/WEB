@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Examen JS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body>
+<h1>Gestor de tareas</h1>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-8 col-md-8 col-lg-8">
+            <table  class="table table-striped" id="list">
+                <thead>
+                    <tr><th></th><th>Id</th><th>Fecha</th><th>Usuario</th><th>Tarea</th></tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí insertaremos las tareas-->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <form id="new-task">
+                <fieldset>
+                    <legend>Nueva tarea</legend>
+                    <div class="form-group">
+                        <label for="task-user">Usuario (dni):</label>
+                        <input type="text" class="form-control" id="task-user" pattern="[0-9]{8}[A-Za-z]{1}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-name">Tarea:</label>
+                        <input type="text" class="form-control" id="task-name" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Importancia:</label>
+                        <div class="radio">
+                            <label><input type="radio" name="task-prio" value="L" required>Normal</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="task-prio" value="H">Alta</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default">Añadir</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <p>Para eliminar una tarea arrástrala aquí</p>
+            <img id="papelera" src="./img/trash.png">
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="./main.js"></script>
+</html>

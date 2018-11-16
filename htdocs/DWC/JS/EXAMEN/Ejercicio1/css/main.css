@@ -1,0 +1,17 @@
+.cart {
+	border: 1px solid red;
+	margin: 30px 1px;
+}
+
+input:invalid {
+	border: 1px solid red;
+}
+
+input:valid {
+	border: 1px solid green;
+}
+
+.error {
+	color: red;
+}
+

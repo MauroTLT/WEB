@@ -26,13 +26,13 @@ class Remesa {
 
     recibosRechazados() {
         let cuentasDesconocidas = this.recibos.filter((recibo)=> !getCuenta(recibo.cuentaCargo));
-        let cuentasDesconocidas.forEach((recibo)=> recibo.causa = 'Cuenta Desconocida');
+        cuentasDesconocidas.forEach((recibo)=> recibo.causa = 'Cuenta Desconocida');
 
         let noAdmitenDomiciliacion = this.recibos.filter((recibo)=> !getCuenta(recibo.cuentaCargo).domicilia(this.cuentaAbono));
-        let noAdmitenDomiciliacion.forEach((recibo)=> recibo.causa = 'La cuenta no admite Domiciliaciones');
+        noAdmitenDomiciliacion.forEach((recibo)=> recibo.causa = 'La cuenta no admite Domiciliaciones');
 
         let saldoInsuficiente = this.recibos.filter((recibo)=> getCuenta(recibo.cuentaCargo).saldo() < recibo.importe);
-        let saldoInsuficiente.forEach((recibo)=> recibo.causa = 'Saldo Insuficiente');
+        saldoInsuficiente.forEach((recibo)=> recibo.causa = 'Saldo Insuficiente');
 
         return cuentasDesconocidas.concat(noAdmitenDomiciliacion).concat(saldoInsuficiente);
     }

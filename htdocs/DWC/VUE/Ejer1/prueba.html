@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Prueba VUE</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="app">
+			<h2>Cosas a hacer este año:</h2>
+			<ul>
+				<li v-for="(elem,index) in todos" @dblclick="delToDo(index)">
+					<label>
+						<input type="checkbox" v-model="elem.check">
+						<del v-if="elem.check">
+						{{ elem.title }}
+						</del>
+						<span v-else>
+						{{ elem.title }}
+						</span>
+					</label>
+				</li>
+			</ul>
+			<input v-model="newToDo">
+			<button @click="addToDo">Añadir</button>
+			<br><br>
+			<button @click="delToDos">Borrar toda la lista</button>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

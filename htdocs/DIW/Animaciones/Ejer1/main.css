@@ -1,5 +1,5 @@
 
-div {
+.sombra, .margen {
 	font-family: 'Arial';
 	background-color: #a8cf45;
 	margin: 50px;
@@ -8,6 +8,11 @@ div {
 	padding: 15px 50px;
 	width: 80px;
 	vertical-align: middle;
+}
+
+hr {
+	margin-top: 200px;
+	margin-bottom: 200px;
 }
 
 /* SOMBRA */
@@ -42,4 +47,72 @@ div {
 	left: -27px;
 	width: 125%;
 	height: 150%;
+}
+
+/* IMAGENES */
+
+img {
+	margin-top: 100px;
+}
+
+img#imagen1 {
+	transition-duration: 1s;
+}
+
+img#imagen1:hover {
+	filter: invert(100%);
+	border-radius: 360px;
+}
+
+img#imagen2 {
+	transition-duration: 2s;
+}
+
+img#imagen2:hover {
+	border: 15px solid black;
+	border-color: red;
+	filter: hue-rotate(90deg);
+	border-radius: 360px;
+	transform: rotate(360deg);
+}
+
+img#imagen3:hover {animation: 5s imagenTres 1;}
+
+@keyframes imagenTres {
+	50% {
+		opacity: 1;
+		filter:sepia(100%);
+		width: 400px;
+	}
+	25%, 75% {
+		opacity: 0;
+		width: 10%;
+	}
+}
+
+img#imagen4:hover {animation: none;}
+
+img#imagen4 {animation: 5s bordes infinite;}
+
+@keyframes bordes {
+	0% {
+		border-top: 5px solid red;
+		filter:blur(10px);
+	}
+	25% {
+		border-right: 10px solid blue;
+		transform: rotateY(180deg);
+	}
+	50% {
+		border-bottom: 15px solid green;
+		transform: rotateX(180deg);
+	}
+	75% {
+		border-left: 20px solid yellow;
+	}
+	100% {
+		border: 10px solid black;
+		filter:blur(0px) grayscale(50%);
+	}
+	
 }

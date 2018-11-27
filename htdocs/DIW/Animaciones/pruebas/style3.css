@@ -1,0 +1,120 @@
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-family: Lucida, Verdana, sans-serif;
+	background-color: hsl(210, 50%, 20%);
+}
+
+#box {
+	padding: 50px;
+	font-size: 5em;
+	font-weight: bold;
+}
+
+.txt {
+	color: hsla(0, 0%, 0%, 0);
+	text-shadow: white 0 0 30px;
+	transition: text-shadow cubic-bezier(0,1,0,1);
+}
+
+#box:hover .txt {
+	text-shadow: white 0 0 1px;
+	transition: text-shadow cubic-bezier(0,0.75,0);
+}
+
+.heart {
+	margin: 0 10px;
+	color: red;
+}
+
+/* NEON */
+p {
+	text-align: center;
+	font-size: 7em;
+	margin: 20px 0;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.5s;
+}
+
+p:nth-child(1) a {
+	color: #ff1177;
+	font-family: Verdana;
+}
+
+p a {
+	animation: neon 1.5s ease-in-out infinite alternate
+}
+
+@keyframes neon {
+	from {
+		text-shadow: 
+			0 10 10px white,
+			0 10 20px white,
+			0 10 30px white,
+			0 10 40px #ff1177,
+			0 10 70px #ff1177,
+			0 10 80px #ff1177,
+			0 10 100px #ff1177,
+			0 10 150px #ff1177;
+	}
+	to {
+		text-shadow: 
+			0 0 5px white,
+			0 0 10px white,
+			0 0 15px white,
+			0 0 20px #ff1177,
+			0 0 35px #ff1177,
+			0 0 40px #ff1177,
+			0 0 50px #ff1177,
+			0 0 75px #ff1177;
+	}
+}
+
+/* FONDO */
+
+.fondo {
+	width: 100%;
+	margin-left: 200px;
+}
+
+.fondo p {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	display: inline-block;
+	border: 4px double rgba(255,255,255,0.25);
+	border-width: 4px 0;
+	padding: 1.5em 0em;
+	width: 40em;
+	margin: 0 0 0 -20em;
+}
+
+.fondo p span {
+	font: 700 2em/1 "Oswald", sans-serif;
+	letter-spacing: 0;
+	padding: 0.25em 0 0.325em;
+	display: block;
+	margin: 0 auto;
+	text-shadow: 0 0 80px rgba(255,255,255,0.5);
+	background: url("http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png") repeat-y;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: fondo 80s linear infinite;
+	transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+}
+
+@keyframes fondo {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	100% {
+		background-position: 100% 50%;
+	}
+}

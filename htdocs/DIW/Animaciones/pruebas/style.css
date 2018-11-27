@@ -1,0 +1,72 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Arial', cursive;
+}
+
+h1, h2 {
+	color: white;
+	font-size: 80px;
+	text-align: center;
+	font-weight: bold;
+	margin: 0 auto;
+	width: 800px;
+	position: fixed;
+	top: 80%;
+	left: 50%;
+	margin-top: -20%;
+	margin-left: -400px;
+	opacity: 0.8;
+}
+
+h2 {
+	font-size: 55px;
+	position: absolute;
+}
+
+.content {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	position: relative;
+	background: white;
+	z-index: 2;
+}
+
+p {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 22px;
+	line-height: 40px;
+	margin: 30px 0;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+.image1 {
+	position: relative;
+	background: url("parallax/universo.jpg") no-repeat fixed;
+	background-position: center center;
+	background-size: cover;
+	min-height: 500px;
+}
+
+.image2 {
+	position: relative;
+	background: url("parallax/universo2.jpg") no-repeat fixed;
+	background-position: center center;
+	background-size: cover;
+	min-height: 500px;
+}
+
+.image3 {
+	position: relative;
+	background: url("parallax/universo3.jpg") no-repeat fixed;
+	background-position: center center;
+	background-size: cover;
+	min-height: 500px;
+}

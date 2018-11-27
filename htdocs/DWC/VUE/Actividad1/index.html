@@ -12,8 +12,8 @@
 
 <body>
 <h1>Gestor de tareas</h1>
-<div class="container">
-    <div class="row" id="app">
+<div class="container" id="app">
+    <div class="row">
         <div class="col-sm-8 col-md-8 col-lg-8">
             <table class="table table-striped" id="list" @load="saveToStorage">
                 <thead>
@@ -34,6 +34,7 @@
                     </tr>
                 </tbody>
             </table>
+            <p>Total de Tareas: {{ tareas.length }}</p>
         </div>
 
         <div class="col-sm-4 col-md-4 col-lg-4">
@@ -63,9 +64,14 @@
             </form>
         </div>
     </div>
-    <div class="row">
+    <div v-if="dayList.length != 0" class="row">
         <div class="col-sm-4 col-md-4 col-lg-4">
-            
+            <h3>Tareas del dia</h3>
+            <ul>
+                <li v-for="(elem,index) in dayList">
+                    {{elem.user}} - {{elem.task}}
+                </li>
+            </ul>
         </div>
     </div>
 </div>

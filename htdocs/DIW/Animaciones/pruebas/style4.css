@@ -1,0 +1,125 @@
+.demo {
+	position: relative;
+	width: 260px;
+	height: 200px;
+	overflow: hidden;
+	float: left;
+	margin-right: 20px;
+	background-color: rgba(26,76,110,0.5); 
+}
+
+.demo p, .demo h2 {
+	color: white;
+	padding: 10px;
+	left: -20px;
+	top: 20px;
+	position: relative;
+}
+
+.demo p {
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+
+.demo h2 {
+	font-size: 20px;
+	line-height: 24px;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+/* EFECTO 1 */
+
+.effect1 img {
+	position: absolute;
+	margin: 60px 0px;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	transition: top 0.4s ease-in-out, right 0.4s ease-in-out;
+}
+
+.effect1 img.top:hover {
+	top: -230px;
+	right: -330px;
+	padding-bottom: 200px;
+	padding-left: 300px;
+}
+
+/* EFECTO 2 */
+
+.effect2 img {
+	position: absolute;
+	margin: -12px 0px;
+	left: 0;
+	bottom: 0;
+	cursor: pointer;
+	transition: bottom 0.4s ease-in-out;
+}
+
+.effect2 img.top:hover {
+	bottom: -96px;
+	padding-top: 100px;
+}
+
+/* EFECTO 3 */
+
+.efecto3 .demo {
+	background-color: transparent;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	cursor: pointer;
+	margin-left: -40px;
+}
+
+figure img {
+	display: block;
+	position: relative;
+	z-index: 10;
+	margin: 0;
+}
+
+figure p {
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	color: white;
+}
+
+.demo figure h2, .demo figure p { left: 0; }
+
+figure figcaption {
+	top: 0;
+	left: 0;
+	height: 100%;
+	text-align: center;
+	display: block;
+	position: absolute;
+	z-index: 5;
+	background-color: rgba(26,76,110,0.5);
+	box-sizing: border-box;
+	backface-visibility: hidden;
+	transform: rotateY(-180deg);
+	transition: all 0.5s;
+}
+
+.demo figure img {
+	backface-visibility: hidden;
+	transition: all 0.5s;
+}
+
+.demo figure:hover img {
+	transform: rotateY(180deg);
+}
+
+.demo figure:hover figcaption {
+	transform: rotateY(0deg);
+}

@@ -1,22 +1,6 @@
 'use strict'
 
 /*
-	Función que devuelve el array de tareas desde el localStorage
-	Si este está vacio devuelve un array con datos de prueba
-*/
-function getStorage() {
-	if (localStorage.getItem('tareas')) {
-		return JSON.parse(localStorage.getItem('tareas'));
-	} else {
-		return [	
-			{date: new Date(), user: '12345678R', task: "Tarea Prueba 1", prio: "H"},
-			{date: new Date(), user: '56781234R', task: "Tarea Prueba 2", prio: "L"},
-			{date: new Date(), user: '87654321R', task: "Tarea Prueba 3", prio: "H"}
-		];
-	}
-}
-
-/*
 	Aplicación VUE
 */
 var miApp = new Vue({
@@ -25,8 +9,31 @@ var miApp = new Vue({
 		user: '', // Variable para el dni del usuario
 		task: '', // Variable para el texto de a tarea
 		prio: '', // Variable para la prioridad
-		tareas: getStorage(), // Cogemos el array de tareas
+		tareas: null, // Cogemos el array de tareas
 		dayList: [], // Variable con las tareas del dia
+	},
+	/*
+		Función que rellena el array de tareas desde el localStorage
+		Si este está vacio devuelve un array con datos de prueba
+	*/
+	created() {
+		if (localStorage.getItem('tareas')) {
+			this.tareas = JSON.parse(localStorage.getItem('tareas'));
+		} else {
+			this.tareas = [	
+				{date: new Date(), user: '12345678R', task: "Tarea Prueba 1", prio: "H"},
+				{date: new Date(), user: '56781234R', task: "Tarea Prueba 2", prio: "L"},
+				{date: new Date(), user: '87654321R', task: "Tarea Prueba 3", prio: "H"}
+			];
+		}
+		// Comprobamos si hay tareas para hoy
+		this.getDayList();
+		// Evitamos la validacion del navegador
+		document.getElementById("new-task").setAttribute('novalidate', 'novalidate');
+		// Evento que se activa justo antes de cerrar la página
+		window.addEventListener('beforeunload', event => {
+			this.saveToStorage();
+		});
 	},
 	methods: {
 		// Método que guarda los cambios antes de cerrar la página
@@ -58,15 +65,4 @@ var miApp = new Vue({
 			});
 		}
 	}
-});
-
-// Comprobamos si hay tareas para hoy
-miApp.getDayList();
-
-window.addEventListener('load', () => {
-	document.getElementById("new-task").setAttribute('novalidate', 'novalidate');
-	// Evento que se activa justo antes de cerrar la página
-	document.body.onbeforeunload = function () {
-		miApp.saveToStorage();
-	};
 });

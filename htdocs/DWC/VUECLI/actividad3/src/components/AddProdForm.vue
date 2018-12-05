@@ -25,6 +25,8 @@
 </template>
 
 <script>
+	import { STORE } from './store.js';
+
 	export default {
 		name: 'add-prod-form',
 		data() {
@@ -38,7 +40,7 @@
 		methods: {
 			newProd() {
 				if (this.cod && this.name && this.units && this.price) {
-					STORE.newProd({cod: this.cod, name: this.name, units: this.units, price: this.price});
+					STORE.newProd({cod: this.cod, name: this.name, units: +this.units, price: +this.price});
 				}
 			},
 		}

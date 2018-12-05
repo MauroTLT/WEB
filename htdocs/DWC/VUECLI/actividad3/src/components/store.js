@@ -1,9 +1,5 @@
-'use strict'
 
-/**
-	Variable donde almacenaremos todo lo referente a la aplicación
-*/
-const STORE = {
+export const STORE = {
 	debug: true, // Modo debug (Si esta activado manda mensajes por cada acción que se ejecuta)
 	state: {
 		almacen: getStorage(),
@@ -41,7 +37,7 @@ const STORE = {
 	saveToStorage() {
 		localStorage.setItem('productos', JSON.stringify(this.state.almacen));
 	},
-}
+};
 
 /*
 	Función que rellena el array de tareas desde el localStorage

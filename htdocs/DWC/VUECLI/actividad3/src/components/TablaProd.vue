@@ -14,6 +14,7 @@
 
 <script>
 	import FilaProd from './FilaProd';
+	import { STORE } from './store.js';
 
 	export default {
 		name: 'tabla-prod',

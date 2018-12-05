@@ -23,6 +23,8 @@
 </template>
 
 <script>
+	import { STORE } from './store.js';
+	
 	export default {
 		name: 'fila-prod',
 		props: ['producto'],

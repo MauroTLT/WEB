@@ -23,9 +23,13 @@
 			<button @click="borrar(producto.id)" type="button" title="Borrar producto" class="btn btn-default btn-sm">
 				<span class="glyphicon glyphicon-trash" style="font-size: 25px;">🗑</span> 
 			</button>
-			<button v-if="edit" @click="alert('hola')" type="button" title="Editar producto" class="btn btn-default btn-sm">
-				<span class="glyphicon glyphicon-trash" style="font-size: 25px;">🗑</span> 
-			</button>
+			<span v-if="edit">
+				<button @click="alert('hola')" type="button" title="Guardar Cambios" class="btn btn-success">Guardar</button>
+				<button @click="alert('hola')" type="button" title="Borrar Cambios" class="btn btn-danger">Descartar</button>
+			</span>
+			<span v-else>
+				<button @click="alert('hola')" type="button" title="Editar Producto" class="btn btn-warning">Editar</button>
+			</span>
 		</td>
 	</tr>
 </template>
@@ -38,7 +42,7 @@
 		props: ['producto'],
 		data() {
 			return {
-				edit: true,
+				edit: false,
 			}
 		},
 		methods: {

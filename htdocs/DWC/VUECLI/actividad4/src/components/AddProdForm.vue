@@ -3,8 +3,8 @@
 		<fieldset>
 			<legend>Nuevo producto</legend>
 			<div class="form-group">
-				<label for="new-cod">Código:</label>
-				<input v-model="id" type="text" class="form-control" id="new-cod" required>
+				<label for="new-id">Código:</label>
+				<input v-model="id" type="text" class="form-control" id="new-id" required>
 			</div>
 			<div class="form-group">
 				<label for="new-name">Nombre:</label>
@@ -40,7 +40,7 @@
 		methods: {
 			newProd() {
 				if (this.id && this.name && this.units && this.price) {
-					STORE.newProd({id: this.id, name: this.name, units: +this.units, price: +this.price});
+					STORE.newProd({id: +this.id, name: this.name, units: +this.units, price: +this.price});
 				}
 			},
 		}

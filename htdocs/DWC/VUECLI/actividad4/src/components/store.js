@@ -59,7 +59,18 @@ export const STORE = {
 		} else {
 			alert("El codigo introducido ya está registrado");
 		}
-	}
+	},
+
+	editProd(producto) {
+		let prod = this.state.almacen.filter((prod)=>prod.id == producto.id)[0];
+		axios.put(URL+'/almacen/'+producto.id, producto).then(
+			() => {
+				prod.name = producto.name;
+				prod.units = producto.units;
+				prod.price = producto.price;
+			}
+		).catch(response => alert('Error: no se ha actualizado el registro. '+response.message));
+	},
 };
 getStorage();
 /*

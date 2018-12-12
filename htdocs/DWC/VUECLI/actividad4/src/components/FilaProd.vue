@@ -1,14 +1,24 @@
 <template>
 	<tr>
-		<td v-if="edit" contenteditable>
-			{{producto.id}}
+		<td>{{producto.id}}</td>
+		<td v-if="edit" width="200">
+			<input style="width: 100%;" type="text" name="editPrice" v-model="nameEdit" :placeholder="producto.name">
 		</td>
 		<td v-else>
-			{{producto.id}}
+			{{producto.name}}
 		</td>
-		<td>{{producto.name}}</td>
-		<td>{{producto.units}}</td>
-		<td>{{producto.price}} €</td>
+		<td v-if="edit" width="150">
+			<input style="width: 100%;" type="number" name="editPrice" v-model="unitsEdit" :placeholder="producto.units">
+		</td>
+		<td v-else>
+			{{producto.units}}
+		</td>
+		<td v-if="edit" width="150">
+			<input style="width: 100%;" type="number" name="editPrice" v-model="precioEdit" :placeholder="producto.price">
+		</td>
+		<td v-else>
+			{{producto.price}} €
+		</td>
 		<td>{{producto.units*producto.price}} €</td>
 		<td>
 			<button @click="sumar(producto.id)" type="button" title="Añadir Unidades" class="btn btn-default btn-sm">
@@ -24,11 +34,11 @@
 				<span class="glyphicon glyphicon-trash" style="font-size: 25px;">🗑</span> 
 			</button>
 			<span v-if="edit">
-				<button @click="alert('hola')" type="button" title="Guardar Cambios" class="btn btn-success">Guardar</button>
-				<button @click="alert('hola')" type="button" title="Borrar Cambios" class="btn btn-danger">Descartar</button>
+				<button @click="editar(producto.id)" type="button" title="Guardar Cambios" class="btn btn-success">Guardar</button>
+				<button @click="edit = false" type="button" title="Borrar Cambios" class="btn btn-danger">Descartar</button>
 			</span>
 			<span v-else>
-				<button @click="alert('hola')" type="button" title="Editar Producto" class="btn btn-warning">Editar</button>
+				<button @click="edit = true" type="button" title="Editar Producto" class="btn btn-warning">Editar</button>
 			</span>
 		</td>
 	</tr>
@@ -43,6 +53,9 @@
 		data() {
 			return {
 				edit: false,
+				nameEdit: '',
+				unitsEdit: '',
+				precioEdit: '',
 			}
 		},
 		methods: {
@@ -50,6 +63,10 @@
 			sumar(cod) {STORE.sumar(cod);},
 			restar(cod) {STORE.restar(cod);},
 			borrar(cod) {STORE.borrar(cod);},
+			editar(cod) {
+				STORE.editProd({id: cod, name: this.nameEdit, units: +this.unitsEdit, price: +this.precioEdit});
+				this.edit = false;
+			}
 		}
 	};
 </script>

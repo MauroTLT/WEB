@@ -40,6 +40,7 @@
 			<span v-else>
 				<button @click="edit = true" type="button" title="Editar Producto" class="btn btn-warning">Editar</button>
 			</span>
+			<button @click="$router.push('show/'+producto.id);" type="button" title="Show" class="btn btn-primary">Show</button>
 		</td>
 	</tr>
 </template>
@@ -66,7 +67,7 @@
 			editar(cod) {
 				STORE.editProd({id: cod, name: this.nameEdit, units: +this.unitsEdit, price: +this.precioEdit});
 				this.edit = false;
-			}
+			},
 		}
 	};
 </script>

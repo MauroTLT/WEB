@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<h1 align="center">Productos del Almacen</h1><br>
+		<h1 align="center">Añadir Nuevo Producto</h1><br>
 		<form id="new-prod" method="POST">
 			<fieldset>
 				<legend>Nuevo producto</legend>
@@ -44,6 +44,7 @@
 			newProd() {
 				if (this.id && this.name && this.units && this.price) {
 					STORE.newProd({id: +this.id, name: this.name, units: +this.units, price: +this.price});
+					this.$router.push('products');
 				}
 			},
 		}

@@ -3,14 +3,11 @@ import axios from 'axios';
 const URL = 'http://localhost:3000';
 
 export const STORE = {
-	debug: true, // Modo debug (Si esta activado manda mensajes por cada acción que se ejecuta)
 	state: {
 		almacen: [],
 	},
 	// Método que suma unidades a un producto del array en base a su codigo
 	sumar(id) {
-		if (this.debug) {console.log('sumar triggered with', id);}
-		
 		let prod = this.state.almacen.filter((prod)=>prod.id == id)[0];
 		prod.units += 1;
 
@@ -24,8 +21,6 @@ export const STORE = {
 	},
 	// Método que resta unidades a un producto del array en base a su codigo
 	restar(id) {
-		if (this.debug) {console.log('restar triggered with', id);}
-
 		let prod = this.state.almacen.filter((prod)=>prod.id == id)[0];
 		prod.units -= 1;
 
@@ -39,7 +34,6 @@ export const STORE = {
 	},
 	// Método que borra un producto del array en base a su codigo
 	borrar(id) {
-		if (this.debug) {console.log('borrar triggered with', id);}
 		let prod = this.state.almacen.filter((prod)=>prod.id == id)[0];
 		if (confirm("¿Deseas borrar el producto " + prod.name + "?")) {
 			axios.delete(URL+'/almacen/'+id).then(
@@ -49,7 +43,6 @@ export const STORE = {
 	},
 	// Método que añade un nuevo producto al array
 	newProd(producto) {
-		if (this.debug) {console.log('newProd triggered with', producto);}
 		// Comprobamos que no haya un producto con ese codigo
 		let prod = this.state.almacen.filter((prod)=>prod.id == producto.id)[0];
 		if (!prod) {
@@ -71,6 +64,10 @@ export const STORE = {
 			}
 		).catch(response => alert('Error: no se ha actualizado el registro. '+response.message));
 	},
+
+	getProduct(cod) {
+		return this.state.almacen.filter((prod)=>prod.id == cod)[0];
+	}
 };
 getStorage();
 /*

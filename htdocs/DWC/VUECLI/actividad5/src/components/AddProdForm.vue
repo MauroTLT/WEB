@@ -28,7 +28,8 @@
 </template>
 
 <script>
-	import { STORE } from './store.js';
+	import axios from 'axios';
+	const URL = 'http://localhost:3000';
 
 	export default {
 		name: 'add-prod-form',
@@ -43,8 +44,10 @@
 		methods: {
 			newProd() {
 				if (this.id && this.name && this.units && this.price) {
-					STORE.newProd({id: +this.id, name: this.name, units: +this.units, price: +this.price});
-					this.$router.push('products');
+					axios.post(URL+'/almacen', {id: this.id, name: this.name, units: this.units, price: this.price}).then(
+						this.$router.push('products')
+					).catch(response => alert('Error: no se ha añadido el registro. '+response.message));
+					
 				}
 			},
 		}

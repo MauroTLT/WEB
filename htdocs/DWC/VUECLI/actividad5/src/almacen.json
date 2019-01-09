@@ -2,9 +2,9 @@
   "almacen": [
     {
       "id": 1,
-      "name": "Tele",
-      "units": 10,
-      "price": 200
+      "name": "Tele2",
+      "units": 3,
+      "price": 4
     },
     {
       "id": 2,

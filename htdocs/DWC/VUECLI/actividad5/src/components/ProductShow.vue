@@ -23,17 +23,22 @@
 </template>
 
 <script>
-	
-	import { STORE } from './store.js';
+	import axios from 'axios';
+	const URL = 'http://localhost:3000';
 
 	export default {
 		name: 'AppAbout',
 		props: ['id'],
 		data() {
 			return {
-				product: STORE.getProduct(this.id),
+				product: {},
 			}
 		},
+		created() {
+			axios.get(URL+'/almacen/'+this.id).then(
+				response => this.product = response.data
+			).catch(response => alert('Error: no se ha borrado el registro. '+response.message));
+		}
 	};
 
 </script>

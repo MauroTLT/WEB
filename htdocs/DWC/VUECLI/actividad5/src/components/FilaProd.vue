@@ -30,7 +30,7 @@
 			<button v-else disabled @click="restar(producto.id)" type="button" title="Restar Unidades" class="btn btn-default btn-sm">
 				<span class="glyphicon glyphicon-chevron-down" style="font-size: 25px;">↓</span>
 			</button>
-			<button @click="borrar(producto.id)" type="button" title="Borrar producto" class="btn btn-default btn-sm">
+			<button @click="$emit('borrar', producto)" type="button" title="Borrar producto" class="btn btn-default btn-sm">
 				<span class="glyphicon glyphicon-trash" style="font-size: 25px;">🗑</span> 
 			</button>
 			<span v-if="edit">
@@ -46,7 +46,8 @@
 </template>
 
 <script>
-	import { STORE } from './store.js';
+	import axios from 'axios';
+	const URL = 'http://localhost:3000';
 	
 	export default {
 		name: 'fila-prod',
@@ -61,12 +62,33 @@
 		},
 		methods: {
 			// Metodos que llaman al almacen
-			sumar(cod) {STORE.sumar(cod);},
-			restar(cod) {STORE.restar(cod);},
-			borrar(cod) {STORE.borrar(cod);},
+			sumar(cod) {
+				axios.put(URL+'/almacen/'+cod, {name: this.producto.name, units: this.producto.units+1, price: this.producto.price}).then(
+					this.producto.units += 1
+				).catch(
+					response => {
+						alert('Error: no se ha borrado el registro. '+response.message)
+					}
+				);
+			},
+			restar(cod) {
+				axios.put(URL+'/almacen/'+cod, {name: this.producto.name, units: this.producto.units-1, price: this.producto.price}).then(
+					this.producto.units -= 1
+				).catch(
+					response => {
+						alert('Error: no se ha borrado el registro. '+response.message)
+					}
+				);
+			},
 			editar(cod) {
-				STORE.editProd({id: cod, name: this.nameEdit, units: +this.unitsEdit, price: +this.precioEdit});
-				this.edit = false;
+				axios.put(URL+'/almacen/'+cod, {id: cod, name: this.nameEdit, units: +this.unitsEdit, price: +this.precioEdit}).then(
+					() => {
+						this.producto.name = this.nameEdit;
+						this.producto.units = +this.unitsEdit;
+						this.producto.price = +this.precioEdit;
+						this.edit = false;
+					}
+				).catch(response => alert('Error: no se ha actualizado el registro. '+response.message));
 			},
 		}
 	};

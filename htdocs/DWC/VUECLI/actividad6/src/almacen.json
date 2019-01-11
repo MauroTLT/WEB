@@ -1,0 +1,22 @@
+{
+  "almacen": [
+    {
+      "id": 1,
+      "name": "Tele2",
+      "units": 3,
+      "price": 4
+    },
+    {
+      "id": 2,
+      "name": "Topo",
+      "units": 500,
+      "price": 1
+    },
+    {
+      "id": 3,
+      "name": "Toporch",
+      "units": 1,
+      "price": 5
+    }
+  ]
+}

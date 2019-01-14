@@ -17,6 +17,18 @@
       "name": "Toporch",
       "units": 1,
       "price": 5
+    },
+    {
+      "id": "4",
+      "name": "Patata",
+      "units": "10",
+      "price": "5"
+    },
+    {
+      "id": "5",
+      "name": "Patata2",
+      "units": "34",
+      "price": "34"
     }
   ]
 }

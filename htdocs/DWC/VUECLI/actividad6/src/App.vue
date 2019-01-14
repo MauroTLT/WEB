@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="navegacion">
     <nav>
       <div class="container">
         <div class="row">
@@ -30,6 +30,11 @@
 
 <style>
 nav {
-  margin: 50px 0px;
+  padding: 50px 0px;
+  background: #ddd;
+  border-bottom: 2px black solid;
+  border-bottom-right-radius: 36px;
+  border-bottom-left-radius: 36px;
+  margin-bottom: 50px;
 }
 </style>

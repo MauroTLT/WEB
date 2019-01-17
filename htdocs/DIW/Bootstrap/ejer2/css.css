@@ -1,0 +1,45 @@
+header, footer, aside, article, #aux {
+	border: 1px solid black;
+	padding: 7px;
+}
+
+header, footer {
+	background: lightgreen;
+	height: 10vh;
+	padding: 0px;
+}
+
+footer {
+	height: 5vh;
+}
+
+main {
+	padding: 14px 0;
+}
+
+aside  {
+	background: red;
+}
+
+section {
+	border: none;
+}
+
+section header {
+	background: purple;
+}
+
+article {
+	background: orange;
+	height: 20vh;
+	padding: 7px 0px;
+}
+
+.section2 article {
+	background: blue;
+	height: 10vh;
+}
+
+#aux section {
+	padding: 5px 0px;
+}

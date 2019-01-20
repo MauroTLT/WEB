@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<title>Ejercicio Bootstrap</title>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="css.css">
-	</head>
-	<body class="container-fluid">
-		<header class="row">
-			<div class="col-md-12"></div>
-		</header>
-		<main class="row">
-			<aside class="col-md-2 col-sm-2 d-sm-block d-none"></aside>
-			<section id="aux" class="col-md-10 col-sm-10">
-				<div class="container-fluid main">
-					<section class="row">
-						<header class="col-md-12"></header>
-					</section>
-					<section class="row">
-						<article class="col-md-6 col-sm-12"></article>
-						<article class="col-md-6 col-sm-12"></article>
-					</section>
-					<section class="row section2">
-						<article class="col-md-2 col-sm-4 col-6"></article>
-						<article class="col-md-2 col-sm-4 col-6"></article>
-						<article class="col-md-4 col-sm-4 col-6"></article>
-						<article class="col-md-2 col-sm-4 col-6"></article>
-						<article class="col-md-2 col-sm-4 col-6"></article>
-						<article class="col-md-2 col-sm-4 col-6"></article>
-						<article class="col-md-2 col-sm-4 col-6"></article>
-						<article class="col-md-4 col-sm-4 col-6"></article>
-						<article class="col-md-2 col-sm-4 col-6"></article>
-						<article class="col-md-2 col-sm-4 col-6"></article>
-					</section>
-				</div>
-			</section>
-		</main>
+<head>
+    <title>Ejercicio Bootstrap</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="ejer2.css">
+</head>
+<body class="container-fluid">
+<header class="row">
+    <div class="col-md-12"></div>
+</header>
 
-		<footer class="row">
-			<div class="col-md-12"></div>
-		</footer>	
+<main class="container-fluid">
+    <section class="row">
+        <article class="col-md-3 offset-md-3 col-sm-3 col-6"></article>
+        <article class="col-md-3 col-sm-3 col-6"></article>
+        <div class="w-100 d-md-block d-sm-none d-block"></div>
+        <article class="col-md-3 col-sm-3 col-6"></article>
+        <article class="col-md-3 offset-md-6 col-sm-3 col-6"></article>
+    </section>
+    <section class="row d-md-none d-sm-block d-none">
+        <header class="col-sm-12">Tablet</header>
+    </section>
+    <section class="row text-center">
+        <article class="col-md-3 order-md-4 col-sm-3 col-6 grey">a</article>
+        <article class="col-md-3 order-md-3 col-sm-3 col-6 grey">b</article>
+        <div class="w-100 d-md-block d-sm-none d-block"></div>
+        <article class="col-md-3 order-md-2 col-sm-3 col-6 grey">c</article>
+        <article class="col-md-3 order-md-1 col-sm-3 col-6 grey">d</article>
+    </section>
+    <section class="row d-md-none d-sm-none d-xs-block">
+        <header class="col-md-12">Mobile</header>
+    </section>
+    <section class="row d-md-block d-none">
+        <header class="col-md-12">Desktop</header>
+    </section>
+    <section class="row">
+        <article class="col-md-3 offset-md-3 col-sm-6 col-12 orange"></article>
+        <article class="col-md-3 col-sm-6 d-md-block d-sm-block d-none orange"></article>
+    </section>
+</main>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-	</body>
+<footer class="row d-md-block d-sm-block d-none">
+    <div class="col-md-12"></div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
 </html>

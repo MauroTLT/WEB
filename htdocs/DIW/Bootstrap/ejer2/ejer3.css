@@ -1,0 +1,53 @@
+header, aside, article {
+    border: 1px solid black;
+    height: 22vh;
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+header, footer {
+    height: 10vh;
+}
+
+header {
+    background: lightgreen;
+}
+
+footer section {
+    border: 1px solid black;
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+main section article {
+    font-size: 80px;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.red {
+    background: red;
+}
+
+@media (min-width: 765px) {
+    article {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 765px) {
+    header {
+        background: cyan;
+    }
+    .green {
+        background: lightgreen;
+    }
+}
+
+@media (max-width: 575px) {
+    header {
+        background: #d58512;
+    }
+}

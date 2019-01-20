@@ -6,7 +6,7 @@ header, footer, aside, article, #aux {
 header, footer {
 	background: lightgreen;
 	height: 10vh;
-	padding: 0px;
+	padding: 0;
 }
 
 footer {
@@ -32,7 +32,7 @@ section header {
 article {
 	background: orange;
 	height: 20vh;
-	padding: 7px 0px;
+	padding: 7px 0;
 }
 
 .section2 article {
@@ -41,5 +41,5 @@ article {
 }
 
 #aux section {
-	padding: 5px 0px;
+	padding: 5px 0;
 }

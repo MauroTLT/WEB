@@ -1,0 +1,27 @@
+header, footer, aside, article, #aux {
+    border: 1px solid black;
+    height: 22vh;
+    margin: 10px 0;
+}
+
+header, footer {
+    background: lightgreen;
+    height: 10vh;
+}
+
+section header {
+    background: #00bdff;
+    margin-top: 10px;
+}
+
+article {
+    background: #2b669a;
+}
+
+.grey {
+    background: #8c8c8c;
+}
+
+.orange {
+    background: orange;
+}

@@ -1,0 +1,659 @@
+{
+  "grupos": [
+    {
+      "id": 1,
+      "codi": "2CFSW",
+      "nomval": "2n DAW",
+      "nomcas": "2º DAW",
+      "tutor": 2,
+      "cicle": "DAW",
+      "grau": "Superior",
+      "familia": "Informàtica"
+    },
+    {
+      "id": 5,
+      "codi": "2CFMK",
+      "nomval": "2n SMX B",
+      "nomcas": "2º SMX B",
+      "tutor": 4,
+      "cicle": "SMX",
+      "grau": "Mitjà",
+      "familia": "Informàtica"
+    }
+  ],
+  "alumnos": [
+    {
+      "id": 3,
+      "nif": 68140978,
+      "nom": "Estefania",
+      "ape1": "Balaguer",
+      "ape2": "Rojano ",
+      "grup": 1
+    },
+    {
+      "id": 4,
+      "nif": 68896951,
+      "nom": "Lucía",
+      "ape1": "Baudí",
+      "ape2": "Bernabeu ",
+      "grup": 1
+    },
+    {
+      "id": 5,
+      "nif": 46905778,
+      "nom": "Siro",
+      "ape1": "Soler",
+      "ape2": "Rodríguez ",
+      "grup": 1
+    },
+    {
+      "id": 6,
+      "nif": 30376015,
+      "nom": "Juan",
+      "ape1": "Sánchez",
+      "ape2": "Cortés ",
+      "grup": 1
+    },
+    {
+      "id": 7,
+      "nif": 20948724,
+      "nom": "Andrea",
+      "ape1": "Corpas",
+      "ape2": "Chacón ",
+      "grup": 1
+    },
+    {
+      "id": 8,
+      "nif": 49895923,
+      "nom": "Guillermo",
+      "ape1": "Cejudo",
+      "ape2": "Oltra ",
+      "grup": 1
+    },
+    {
+      "id": 9,
+      "nif": 11699954,
+      "nom": "Bernardino",
+      "ape1": "Moliner",
+      "ape2": "Castelló ",
+      "grup": 2
+    },
+    {
+      "id": 10,
+      "nif": 91440961,
+      "nom": "Javier",
+      "ape1": "Cantó",
+      "ape2": "Carro ",
+      "grup": 2
+    },
+    {
+      "id": 11,
+      "nif": 19874815,
+      "nom": "Carles",
+      "ape1": "López",
+      "ape2": "Berenguer ",
+      "grup": 2
+    },
+    {
+      "id": 12,
+      "nif": 49284707,
+      "nom": "Ana maría",
+      "ape1": "Carbonell",
+      "ape2": "Palmer ",
+      "grup": 2
+    },
+    {
+      "id": 13,
+      "nif": 59894556,
+      "nom": "Adrián",
+      "ape1": "Ronda",
+      "ape2": "Alpiste ",
+      "grup": 2
+    },
+    {
+      "id": 14,
+      "nif": 32601421,
+      "nom": "María estela",
+      "ape1": "Martínez",
+      "ape2": "Luna ",
+      "grup": 2
+    },
+    {
+      "id": 15,
+      "nif": 62920104,
+      "nom": "Laura",
+      "ape1": "Candela",
+      "ape2": "Gisbert ",
+      "grup": 2
+    },
+    {
+      "id": 16,
+      "nif": 93275183,
+      "nom": "Paula",
+      "ape1": "Ramírez",
+      "ape2": "Mengual ",
+      "grup": 2
+    },
+    {
+      "id": 17,
+      "nif": 68819278,
+      "nom": "Estela",
+      "ape1": "Francés",
+      "ape2": "Gascó ",
+      "grup": 2
+    },
+    {
+      "id": 18,
+      "nif": 38395455,
+      "nom": "Francisco",
+      "ape1": "Rodríguez",
+      "ape2": "Pérez ",
+      "grup": 3
+    },
+    {
+      "id": 19,
+      "nif": 92675454,
+      "nom": "Alba",
+      "ape1": "Giner",
+      "ape2": "Olcina ",
+      "grup": 3
+    },
+    {
+      "id": 20,
+      "nif": 97552810,
+      "nom": "Josep",
+      "ape1": "Chiquillo",
+      "ape2": "Cantó ",
+      "grup": 3
+    },
+    {
+      "id": 21,
+      "nif": 98090638,
+      "nom": "Miriam",
+      "ape1": "Cerdá",
+      "ape2": "Camps ",
+      "grup": 3
+    },
+    {
+      "id": 22,
+      "nif": 97611742,
+      "nom": "Raquel",
+      "ape1": "Francés",
+      "ape2": "Ponce ",
+      "grup": 3
+    },
+    {
+      "id": 23,
+      "nif": 85001175,
+      "nom": "Borja",
+      "ape1": "Rico",
+      "ape2": "Poveda ",
+      "grup": 3
+    },
+    {
+      "id": 24,
+      "nif": 46198310,
+      "nom": "Jorge",
+      "ape1": "Jover",
+      "ape2": "Abellán ",
+      "grup": 5
+    },
+    {
+      "id": 25,
+      "nif": 71423877,
+      "nom": "Roberto",
+      "ape1": "Caballero",
+      "ape2": "Cerdá ",
+      "grup": 5
+    },
+    {
+      "id": 26,
+      "nif": 61905955,
+      "nom": "Gabriel",
+      "ape1": "Sanchís",
+      "ape2": "Ferrer ",
+      "grup": 5
+    },
+    {
+      "id": 27,
+      "nif": 91489562,
+      "nom": "María consuelo",
+      "ape1": "Ferrando",
+      "ape2": "Domínguez ",
+      "grup": 5
+    },
+    {
+      "id": 28,
+      "nif": 48012247,
+      "nom": "Daniel",
+      "ape1": "García",
+      "ape2": "Priego ",
+      "grup": 4
+    },
+    {
+      "id": 29,
+      "nif": 35835882,
+      "nom": "María",
+      "ape1": "Ivorra",
+      "ape2": "Pérez ",
+      "grup": 4
+    },
+    {
+      "id": 30,
+      "nif": 35047375,
+      "nom": "Laura",
+      "ape1": "Catalá",
+      "ape2": "Soler ",
+      "grup": 4
+    },
+    {
+      "id": 31,
+      "nif": 32688860,
+      "nom": "Ferran",
+      "ape1": "Moratal",
+      "ape2": "Pérez ",
+      "grup": 4
+    },
+    {
+      "id": 32,
+      "nif": 28813786,
+      "nom": "Jaime",
+      "ape1": "Domenech",
+      "ape2": "Ferre ",
+      "grup": 4
+    },
+    {
+      "id": 33,
+      "nif": 87214241,
+      "nom": "Noemí",
+      "ape1": "Prats",
+      "ape2": "Salgado ",
+      "grup": 4
+    },
+    {
+      "id": 34,
+      "nif": 80729848,
+      "nom": "María josefa",
+      "ape1": "Flor",
+      "ape2": "Moreno ",
+      "grup": 4
+    },
+    {
+      "id": 35,
+      "nif": 76609648,
+      "nom": "Ángela",
+      "ape1": "Jornet",
+      "ape2": "Llinares ",
+      "grup": 4
+    },
+    {
+      "id": 36,
+      "nif": 34119019,
+      "nom": "Estefanía",
+      "ape1": "Ruiz",
+      "ape2": "Navarro ",
+      "grup": 4
+    },
+    {
+      "id": 37,
+      "nif": 20106854,
+      "nom": "Silvia",
+      "ape1": "Botí",
+      "ape2": "Martínez ",
+      "grup": 4
+    },
+    {
+      "id": 38,
+      "nif": 86557363,
+      "nom": "Isabel beatriz",
+      "ape1": "Conejo",
+      "ape2": "Gutiérrez ",
+      "grup": 5
+    },
+    {
+      "id": 39,
+      "nif": 64914933,
+      "nom": "Rocío",
+      "ape1": "Sánchez",
+      "ape2": "Eckhardt ",
+      "grup": 5
+    },
+    {
+      "id": 40,
+      "nif": 21705808,
+      "nom": "Belén",
+      "ape1": "Segovia",
+      "ape2": "Fernández ",
+      "grup": 5
+    },
+    {
+      "id": 41,
+      "nif": 87008335,
+      "nom": "Nora",
+      "ape1": "Pérez",
+      "ape2": "Ayuso ",
+      "grup": 5
+    },
+    {
+      "id": 42,
+      "nif": 73889859,
+      "nom": "Andrea",
+      "ape1": "Llopis",
+      "ape2": "Delgado ",
+      "grup": 5
+    },
+    {
+      "id": 43,
+      "nif": 61089615,
+      "nom": "Tania",
+      "ape1": "Miguel",
+      "ape2": "Seva ",
+      "grup": 5
+    },
+    {
+      "id": 44,
+      "nif": 37893991,
+      "nom": "Paula",
+      "ape1": "Jiménez",
+      "ape2": "Vallés ",
+      "grup": 5
+    },
+    {
+      "id": 45,
+      "nif": 96581271,
+      "nom": "Noemí",
+      "ape1": "García",
+      "ape2": "Barrachina ",
+      "grup": 5
+    },
+    {
+      "id": 46,
+      "nif": 24900719,
+      "nom": "María julia",
+      "ape1": "Juan",
+      "ape2": "Guerrero ",
+      "grup": 5
+    }
+  ],
+  "profesores": [
+    {
+      "id": 2,
+      "codi": 1732,
+      "nom": "Ana maría",
+      "ape1": "Cardona",
+      "ape2": "Márquez ",
+      "grup": 1
+    },
+    {
+      "id": 3,
+      "codi": 7132,
+      "nom": "María",
+      "ape1": "Santamaría",
+      "ape2": "Payá ",
+      "grup": 1
+    },
+    {
+      "id": 4,
+      "codi": 2387,
+      "nom": "Luís miguel",
+      "ape1": "Vivas",
+      "ape2": "Battistutta ",
+      "grup": 1
+    },
+    {
+      "id": 5,
+      "codi": 2598,
+      "nom": "Antoni",
+      "ape1": "Mullor",
+      "ape2": "Leal ",
+      "grup": 2
+    },
+    {
+      "id": 6,
+      "codi": 2956,
+      "nom": "Carlos",
+      "ape1": "Pastor",
+      "ape2": "Senabre ",
+      "grup": 2
+    },
+    {
+      "id": 7,
+      "codi": 3134,
+      "nom": "Emilia",
+      "ape1": "Bernat",
+      "ape2": "Marco ",
+      "grup": 2
+    },
+    {
+      "id": 8,
+      "codi": 3476,
+      "nom": "Lucía",
+      "ape1": "Soler",
+      "ape2": "Díaz ",
+      "grup": 2
+    },
+    {
+      "id": 9,
+      "codi": 3898,
+      "nom": "Alexandra",
+      "ape1": "Ortíz",
+      "ape2": "Cánovas ",
+      "grup": 3
+    },
+    {
+      "id": 10,
+      "codi": 4376,
+      "nom": "Carolina",
+      "ape1": "Ochoa",
+      "ape2": "Berenguer ",
+      "grup": 3
+    },
+    {
+      "id": 11,
+      "codi": 4798,
+      "nom": "Saúl",
+      "ape1": "Soriano",
+      "ape2": "Sanjuán ",
+      "grup": 3
+    },
+    {
+      "id": 12,
+      "codi": 5487,
+      "nom": "Carlos",
+      "ape1": "Navarro",
+      "ape2": "Blanes ",
+      "grup": 3
+    },
+    {
+      "id": 13,
+      "codi": 5596,
+      "nom": "María carmen",
+      "ape1": "Catalá",
+      "ape2": "Gómez ",
+      "grup": 4
+    },
+    {
+      "id": 14,
+      "codi": 6116,
+      "nom": "Sandra",
+      "ape1": "Martínez",
+      "ape2": "Oltra ",
+      "grup": 4
+    },
+    {
+      "id": 15,
+      "codi": 6716,
+      "nom": "Mónica",
+      "ape1": "Moya",
+      "ape2": "Belda ",
+      "grup": 4
+    },
+    {
+      "id": 16,
+      "codi": 7621,
+      "nom": "Carmen",
+      "ape1": "Martínez",
+      "ape2": "Jordá ",
+      "grup": 4
+    },
+    {
+      "id": 17,
+      "codi": 7345,
+      "nom": "Souaad",
+      "ape1": "Bernal",
+      "ape2": "Muñoz ",
+      "grup": 5
+    },
+    {
+      "id": 18,
+      "codi": 8167,
+      "nom": "Joana",
+      "ape1": "Rico",
+      "ape2": "Arribas ",
+      "grup": 5
+    },
+    {
+      "id": 19,
+      "codi": 8495,
+      "nom": "Lucía",
+      "ape1": "Doménech",
+      "ape2": "Cerdá ",
+      "grup": 5
+    }
+  ],
+  "campos": [
+    {
+      "id": 1,
+      "tabla": "grupos",
+      "orden": 1,
+      "campo": "id",
+      "descrip": "Id"
+    },
+    {
+      "id": 2,
+      "tabla": "grupos",
+      "orden": 2,
+      "campo": "codi",
+      "descrip": "Codi"
+    },
+    {
+      "id": 3,
+      "tabla": "grupos",
+      "orden": 3,
+      "campo": "nomval",
+      "descrip": "Nom valencia"
+    },
+    {
+      "id": 4,
+      "tabla": "grupos",
+      "orden": 4,
+      "campo": "nomcas",
+      "descrip": "Nom castella"
+    },
+    {
+      "id": 5,
+      "tabla": "grupos",
+      "orden": 5,
+      "campo": "tutor",
+      "descrip": "Tutor"
+    },
+    {
+      "id": 6,
+      "tabla": "grupos",
+      "orden": 6,
+      "campo": "ciclo",
+      "descrip": "Ciclo"
+    },
+    {
+      "id": 7,
+      "tabla": "grupos",
+      "orden": 7,
+      "campo": "familia",
+      "descrip": "Familia"
+    },
+    {
+      "id": 8,
+      "tabla": "alumnos",
+      "orden": 1,
+      "campo": "id",
+      "descrip": "Id"
+    },
+    {
+      "id": 9,
+      "tabla": "alumnos",
+      "orden": 2,
+      "campo": "nif",
+      "descrip": "Nif"
+    },
+    {
+      "id": 10,
+      "tabla": "alumnos",
+      "orden": 3,
+      "campo": "nom",
+      "descrip": "Nom"
+    },
+    {
+      "id": 11,
+      "tabla": "alumnos",
+      "orden": 4,
+      "campo": "ape1",
+      "descrip": "Cognom 1"
+    },
+    {
+      "id": 12,
+      "tabla": "alumnos",
+      "orden": 5,
+      "campo": "ape2",
+      "descrip": "Cognom 2"
+    },
+    {
+      "id": 13,
+      "tabla": "alumnos",
+      "orden": 6,
+      "campo": "grup",
+      "descrip": "Grup"
+    },
+    {
+      "id": 14,
+      "tabla": "profesores",
+      "orden": 1,
+      "campo": "id",
+      "descrip": "Id"
+    },
+    {
+      "id": 15,
+      "tabla": "profesores",
+      "orden": 2,
+      "campo": "codi",
+      "descrip": "Codi"
+    },
+    {
+      "id": 16,
+      "tabla": "profesores",
+      "orden": 3,
+      "campo": "nom",
+      "descrip": "Nom"
+    },
+    {
+      "id": 17,
+      "tabla": "profesores",
+      "orden": 4,
+      "campo": "ape1",
+      "descrip": "Cognom 1"
+    },
+    {
+      "id": 18,
+      "tabla": "profesores",
+      "orden": 5,
+      "campo": "ape2",
+      "descrip": "Cognom 2"
+    },
+    {
+      "id": 19,
+      "tabla": "profesores",
+      "orden": 6,
+      "campo": "grup",
+      "descrip": "Grup"
+    }
+  ]
+}

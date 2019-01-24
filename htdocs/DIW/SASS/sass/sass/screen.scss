@@ -4,12 +4,40 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "_menu.scss";
+@import "_mixins.scss";
 
-@mixin box-sizing($x) {
-	-webkit-box-sizing: $x;
-	box-sizing: $x;
+body {
+    padding: 0px;
+    margin: 0px;
 }
 
-.content {
-	@include box-sizing(border-box);
+header {
+    padding: 12px 30px;
+    font-size: 1.8em;
+    color: $textColor;
+    background-color: $bgColor;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #aaa;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+footer {
+	@include paint();
+    @include box-sizing(border-box);
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 5px;
+}
+
+@keyframes iluminar {
+    from {
+        background-color: #666;
+        color: #eee;
+    }
+    to {
+        background-color: #888;
+        color: #fff;
+    }
 }

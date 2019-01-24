@@ -1,0 +1,33 @@
+
+$textColor: #eee;
+$textColorHover: #fff;
+$bgColor: #666;
+$bgListHover: #888;
+
+@mixin paint() {
+	background: $bgColor;
+	color: $textColor;
+}
+
+@mixin paintHover() {
+	background: $bgListHover;
+	color: $textColorHover;
+}
+
+@mixin box-sizing($value) {
+	-webkit-box-sizing: $value;
+	-moz-box-sizing: $value;
+	box-sizing: $value;
+}
+
+@mixin makeTransition($property, $duration, $timing: linear) {
+	-webkit-transition: $property $duration $timing;
+	-moz-transition: $property $duration $timing;
+	transition: $property $duration $timing;
+}
+
+@mixin makeAnimation($name, $duration, $timing: linear) {
+	-webkit-animation: $name $duration $timing;
+	-moz-animation: $name $duration $timing;
+	animation: $name $duration $timing;
+}

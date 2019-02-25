@@ -1,0 +1,45 @@
+{
+  "productos": [
+    {
+      "codigo": "040023",
+      "img": "camiseta.jpg",
+      "nombre": "Camiseta hombre",
+      "precio": 5.95,
+      "colores": [
+        "#FF0000",
+        "#00FFFF",
+        "#00FF00",
+        "#0000FF",
+        "#FF00FF",
+        "#FFFF00"
+      ]
+    },
+    {
+      "codigo": "054621",
+      "img": "zapato-piel.jpg",
+      "nombre": "Zapato piel",
+      "precio": 35.5,
+      "colores": [
+        "#FFFFFF",
+        "#663300",
+        "#000000"
+      ]
+    },
+    {
+      "codigo": "042256",
+      "img": "blusa.jpg",
+      "nombre": "Blusa mujer",
+      "precio": 17.25,
+      "colores": [
+        "#FF0000",
+        "#00FFFF",
+        "#00FF00",
+        "#0000FF",
+        "#FF00FF",
+        "#FFFF00",
+        "#FFFFFF",
+        "#000000"
+      ]
+    }
+  ]
+}

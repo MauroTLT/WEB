@@ -1,0 +1,666 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700|Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Merienda");
+/* line 5, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Descargas/compass.app/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* TIPOGRAFIAS */
+/* line 23, ../sass/screen.scss */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  margin: 0 25px;
+  padding: 0;
+}
+/* line 29, ../sass/screen.scss */
+body > header img {
+  width: 100%;
+  height: 250px;
+}
+
+/* line 35, ../sass/screen.scss */
+h1 {
+  font-size: 36px;
+  color: white;
+}
+
+/* line 40, ../sass/screen.scss */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 45, ../sass/screen.scss */
+#barraNav {
+  font-size: 20px;
+  height: 70px;
+  top: 0;
+  left: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #6699CC;
+  z-index: 10;
+  box-shadow: 0 0 10px 0;
+}
+/* line 56, ../sass/screen.scss */
+#barraNav img {
+  float: left;
+  margin: 5px 0 5px 2%;
+  width: 60px;
+  height: 60px;
+}
+
+/* line 66, ../sass/screen.scss */
+#barra-busqueda img {
+  width: 90%;
+  height: auto;
+}
+/* line 71, ../sass/screen.scss */
+#barra-busqueda button {
+  right: 40px;
+  color: white;
+  -moz-border-radius: initial;
+  border-style: initial;
+  height: 50px;
+  width: 50px;
+  background-color: #FF9966;
+  border-radius: 60px;
+  transition-duration: 0.4s;
+  position: absolute;
+}
+/* line 83, ../sass/screen.scss */
+#barra-busqueda button:hover {
+  background-color: #ffcccc;
+  color: #000000;
+}
+/* line 89, ../sass/screen.scss */
+#barra-busqueda input {
+  right: 40px;
+  height: 50px;
+  width: 80%;
+  max-width: 200px;
+  border-radius: 30px;
+  position: absolute;
+}
+
+/*
+		CSS PARA EL ASIDE
+*/
+/* line 103, ../sass/screen.scss */
+#navAside {
+  font-size: 30px;
+}
+/* line 105, ../sass/screen.scss */
+#navAside ul {
+  font-family: 'Merienda', cursive;
+  padding: 0;
+  list-style-type: none;
+}
+/* line 110, ../sass/screen.scss */
+#navAside ul li {
+  -webkit-box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  display: inline-block;
+  padding: unset;
+  background-color: #FF9966;
+}
+/* line 116, ../sass/screen.scss */
+#navAside ul li a {
+  display: block;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+/* line 123, ../sass/screen.scss */
+#navAside ul li a:hover {
+  background-color: #ffcccc;
+  color: #000000;
+}
+
+/* line 133, ../sass/screen.scss */
+#novedades {
+  font-size: 20px;
+  -webkit-box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  padding: 10px;
+  background-color: #ffcccc;
+}
+/* line 139, ../sass/screen.scss */
+#novedades h2 {
+  font-size: 28px;
+}
+/* line 143, ../sass/screen.scss */
+#novedades p {
+  max-height: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+		CSS PARA EL MAIN
+*/
+/* line 154, ../sass/screen.scss */
+#tit-logo {
+  margin: 15px 0;
+}
+/* line 157, ../sass/screen.scss */
+#tit-logo h1 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  color: #000000;
+  font-size: 76px;
+}
+@media (max-width: 500px) {
+  /* line 157, ../sass/screen.scss */
+  #tit-logo h1 {
+    font-size: 40px;
+  }
+}
+
+/* line 169, ../sass/screen.scss */
+main {
+  /*
+  	CSS PARA RECETAS
+  */
+}
+/* line 170, ../sass/screen.scss */
+main #slider, main article {
+  -webkit-box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+}
+/* line 174, ../sass/screen.scss */
+main #recDestacada {
+  background-color: #CCFFFF;
+}
+/* line 178, ../sass/screen.scss */
+main #recTemporada {
+  background-color: #ffcccc;
+}
+/* line 182, ../sass/screen.scss */
+main #slider {
+  background-color: #CCFFFF;
+  padding: 20px;
+}
+/* line 186, ../sass/screen.scss */
+main #slider article {
+  overflow: hidden;
+}
+/* line 193, ../sass/screen.scss */
+main #filter {
+  background-color: #ffcccc;
+  margin: 0;
+}
+/* line 198, ../sass/screen.scss */
+main #filter select {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 100%;
+  height: 50px;
+  background-color: #FF9966;
+}
+/* line 209, ../sass/screen.scss */
+main #fotos {
+  background-color: #CCFFFF;
+}
+/* line 212, ../sass/screen.scss */
+main #fotos .linea {
+  box-shadow: none;
+}
+/* line 215, ../sass/screen.scss */
+main #fotos .linea a div {
+  margin: 25px 15px 25px 15px;
+  height: 250px;
+  display: inline-block;
+  overflow: hidden;
+}
+/* line 221, ../sass/screen.scss */
+main #fotos .linea a div img {
+  box-shadow: none;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* line 230, ../sass/screen.scss */
+main #fotos article img.quarter {
+  position: relative;
+  height: 223px;
+  width: 305px;
+  margin: 10px 5px 5px 10px;
+}
+
+/*
+		CSS PARA RECETAS
+*/
+/* line 243, ../sass/screen.scss */
+.titulo-seccion > header {
+  background-color: #6699CC;
+}
+
+/*
+		CSS PARA POST RECETA
+*/
+/* line 251, ../sass/screen.scss */
+.receta-post {
+  background-color: #ffcccc;
+  padding: 10px 10px 10px 20px;
+}
+/* line 256, ../sass/screen.scss */
+.receta-post article * {
+  position: static;
+  text-align: left;
+  float: left;
+  font-size: 20px;
+  padding: 5px;
+  width: 100%;
+  -webkit-box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+}
+/* line 266, ../sass/screen.scss */
+.receta-post article ul {
+  width: 94%;
+  box-shadow: none !important;
+  height: 300px;
+}
+/* line 271, ../sass/screen.scss */
+.receta-post article ul li {
+  box-shadow: none !important;
+  width: 75%;
+  margin: 10px 20px 0 12.5%;
+}
+/* line 278, ../sass/screen.scss */
+.receta-post article span {
+  width: 94%;
+  box-shadow: none !important;
+  height: 300px;
+}
+/* line 284, ../sass/screen.scss */
+.receta-post article p, .receta-post article div {
+  background-color: #ffcc99;
+  min-height: 250px;
+}
+/* line 289, ../sass/screen.scss */
+.receta-post article img {
+  box-shadow: none !important;
+  height: 325px;
+}
+/* line 293, ../sass/screen.scss */
+.receta-post article img#tiempo-hacer {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  margin-left: 25%;
+}
+
+/* line 303, ../sass/screen.scss */
+.tit-receta {
+  font-family: 'Merienda', cursive;
+  color: white;
+  font-weight: 400;
+  float: right;
+  margin: 10px 28px 10px 13px;
+  background-color: #FF9966;
+  height: 50px;
+  width: 46.8%;
+  font-size: 30px;
+  line-height: 150%;
+  -webkit-box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+}
+
+/*
+		CSS PARA TRUCOS Y CONSEJOS
+*/
+/* line 321, ../sass/screen.scss */
+section.articulo {
+  background-color: #CCFFFF;
+}
+/* line 324, ../sass/screen.scss */
+section.articulo .titulo {
+  font-family: 'Merienda', cursive;
+  font-size: 30px;
+  background-color: #6699CC;
+}
+/* line 329, ../sass/screen.scss */
+section.articulo .titulo h2 {
+  color: white;
+  font-weight: 400;
+}
+/* line 335, ../sass/screen.scss */
+section.articulo .content-article {
+  font-size: 20px;
+  background-color: #99CCFF;
+}
+/* line 339, ../sass/screen.scss */
+section.articulo .content-article .keywords {
+  box-shadow: none !important;
+}
+/* line 342, ../sass/screen.scss */
+section.articulo .content-article .keywords button {
+  font-family: 'Merienda', cursive;
+  background-color: #6699CC;
+  border-style: none;
+  -webkit-box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  color: white;
+  font-size: 22px;
+  transition-duration: 0.4s;
+}
+/* line 351, ../sass/screen.scss */
+section.articulo .content-article .keywords button:hover {
+  background-color: #CCFFFF !important;
+  color: #000000;
+}
+/* line 357, ../sass/screen.scss */
+section.articulo .content-article .keywords .salmon:hover {
+  background-color: #ffcccc !important;
+  color: #000000;
+}
+
+/*
+		CSS PARA POST TRUCOS Y CONSEJOS
+*/
+/* line 369, ../sass/screen.scss */
+#post-truco-consejo {
+  background-color: #ffcccc;
+}
+/* line 371, ../sass/screen.scss */
+#post-truco-consejo article {
+  -webkit-box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+}
+/* line 374, ../sass/screen.scss */
+#post-truco-consejo article p {
+  background-color: #ffcc99;
+  font-size: 20px;
+}
+/* line 379, ../sass/screen.scss */
+#post-truco-consejo article div {
+  overflow: hidden;
+}
+/* line 383, ../sass/screen.scss */
+#post-truco-consejo article .main-img {
+  box-shadow: none;
+}
+/* line 386, ../sass/screen.scss */
+#post-truco-consejo article .main-img img {
+  box-shadow: none;
+}
+
+/* line 393, ../sass/screen.scss */
+#tit-truco-consejo {
+  z-index: 1;
+  font-family: 'Merienda', cursive;
+  color: white;
+  font-weight: 400;
+  position: absolute;
+  background-color: #FF9966;
+  line-height: 150%;
+  -webkit-box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.41);
+}
+
+/*
+		CSS PARA EL CONTACTO
+*/
+/* line 408, ../sass/screen.scss */
+#sobre-nosotros {
+  background-color: #CCFFFF;
+  padding: 10px 10px 10px 20px;
+}
+/* line 412, ../sass/screen.scss */
+#sobre-nosotros article p {
+  position: static;
+  text-align: left;
+  float: left;
+  padding: 5px;
+}
+
+/*
+		CSS PARA EL FOOTER
+*/
+/* line 424, ../sass/screen.scss */
+footer {
+  background-color: #9999CC;
+}
+
+/* line 428, ../sass/screen.scss */
+#rrss {
+  border-left: 7px dotted white;
+}
+@media (max-width: 765px) {
+  /* line 428, ../sass/screen.scss */
+  #rrss {
+    border: none;
+  }
+}
+
+@media (min-width: 766px) {
+  /* line 437, ../sass/screen.scss */
+  p.text-truncate {
+    white-space: normal;
+  }
+}
+/* COLORES */
+/* line 443, ../sass/screen.scss */
+.salmon {
+  background-color: #FF9966 !important;
+}
+
+/* line 447, ../sass/screen.scss */
+.salmon-medio {
+  background-color: #ffcc99 !important;
+}
+
+/* line 451, ../sass/screen.scss */
+.salmon-claro {
+  background-color: #ffcccc !important;
+}
+
+/* line 455, ../sass/screen.scss */
+.azul {
+  background-color: #6699CC !important;
+}
+
+/* line 459, ../sass/screen.scss */
+.azul-medio {
+  background-color: #99CCFF !important;
+}
+
+/* line 463, ../sass/screen.scss */
+.azul-claro {
+  background-color: #CCFFFF !important;
+}
+
+/* line 468, ../sass/screen.scss */
+#navAside li.menu {
+  display: none;
+  transition-duration: 0.4s;
+}
+/* line 472, ../sass/screen.scss */
+#navAside li.is-active {
+  display: block;
+}
+/* line 475, ../sass/screen.scss */
+#navAside li.is-active:nth-of-type(2) {
+  animation: show 0.5s;
+}
+/* line 479, ../sass/screen.scss */
+#navAside li.is-active:nth-of-type(3) {
+  animation: show 0.5s 0.1s;
+}
+/* line 483, ../sass/screen.scss */
+#navAside li.is-active:nth-of-type(4) {
+  animation: show 0.5s 0.25s;
+}
+/* line 487, ../sass/screen.scss */
+#navAside li.is-active:nth-of-type(5) {
+  animation: show 0.5s 0.4s;
+}
+
+@keyframes show {
+  0% {
+    display: none;
+    transform: translateX(-900px);
+  }
+  /* 75% {
+  	display: none;
+  } */
+  100% {
+    display: block;
+    transform: translateX(0px);
+  }
+}
+/* line 509, ../sass/screen.scss */
+#hamburger {
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 515, ../sass/screen.scss */
+#hamburger:hover {
+  cursor: pointer;
+}
+/* line 519, ../sass/screen.scss */
+#hamburger .line {
+  width: 50px;
+  height: 5px;
+  background-color: #ecf0f1;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 530, ../sass/screen.scss */
+#hamburger.is-active {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 536, ../sass/screen.scss */
+#hamburger.is-active:before {
+  border: 5px solid #ecf0f1;
+}
+/* line 540, ../sass/screen.scss */
+#hamburger.is-active .line {
+  width: 35px;
+}
+/* line 543, ../sass/screen.scss */
+#hamburger.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+/* line 547, ../sass/screen.scss */
+#hamburger.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(13px);
+  -ms-transform: translateY(13px);
+  -o-transform: translateY(13px);
+  transform: translateY(13px);
+}
+/* line 554, ../sass/screen.scss */
+#hamburger.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-13px) rotate(90deg);
+  -ms-transform: translateY(-13px) rotate(90deg);
+  -o-transform: translateY(-13px) rotate(90deg);
+  transform: translateY(-13px) rotate(90deg);
+}
+
+/* line 564, ../sass/screen.scss */
+#foco-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+/* line 573, ../sass/screen.scss */
+#foco-img p {
+  text-align: right;
+  color: #fff;
+  margin-right: 20px;
+  font-size: 12px;
+}
+/* line 580, ../sass/screen.scss */
+#foco-img img {
+  margin-top: 3em;
+  box-shadow: 0 0 25px #111;
+  -webkit-box-shadow: 0 0 25px #111;
+  -moz-box-shadow: 0 0 25px #111;
+  max-width: 940px;
+  min-width: 400px;
+}
+/* line 589, ../sass/screen.scss */
+#foco-img, #foco-img img:not(main #fotos .linea a div img):not(img.icono) {
+  cursor: pointer;
+}
